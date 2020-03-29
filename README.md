@@ -1,37 +1,27 @@
-# my-project
+# vuejs-h5-wx
 
-> A Mpvue project
+> vuejs 开发一套代码,可以构建 H5,小程序(微信,百度,支付宝,今日头条)多个版本
 
-## Build Setup
+## 具体操作
 
-``` bash
-# 初始化项目
-vue init mpvue/mpvue-quickstart myproject
-cd myproject
+```bash
 
 # 安装依赖
 yarn
 
-# 开发时构建
-npm dev
+# dev 对应平台 h5 微信、百度、头条、支付宝
+yarn run dev:h5
+yarn run dev:wx
+yarn run dev:swan
+yarn run dev:tt
+yarn run dev:my
 
-# 打包构建
-npm build
+# build 对应平台 h5 微信、百度、头条、支付宝
 
-# 指定平台的开发时构建(微信、百度、头条、支付宝)
-npm dev:wx
-npm dev:swan
-npm dev:tt
-npm dev:my
+yarn run build:h5
+yarn run build:wx
+yarn run build:swan
+yarn run build:tt
+yarn run build:my
 
-# 指定平台的打包构建
-npm build:wx
-npm build:swan
-npm build:tt
-npm build:my
-
-# 生成 bundle 分析报告
-npm run build --report
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
