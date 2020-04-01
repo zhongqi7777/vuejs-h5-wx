@@ -1,12 +1,7 @@
 <template>
   <div class="search-bar">
     <div class="search-bar-wrapper">
-      <van-icon
-        class="search"
-        name="search"
-        size="16px"
-        color="#858C96"
-      ></van-icon>
+      <van-icon class="search" name="search" size="16px" color="#858C96"></van-icon>
       <input
         class="search-bar-input"
         :focus="focus"
@@ -32,75 +27,83 @@
 </template>
 
 <script>
-  export default {
-    name: 'SearchBar',
-    props: {
-      focus: {
-        type: Boolean,
-        default: false
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      limit: {
-        type: Number,
-        default: 50
-      },
-      hotSearch: {
-        type: String,
-        default: ''
-      }
+/* eslint-disable */
+export default {
+  name: "SearchBar",
+  props: {
+    focus: {
+      type: Boolean,
+      default: false
     },
-    data() {
-      return {
-        searchWord: ''
-      }
+    disabled: {
+      type: Boolean,
+      default: false
     },
-    methods: {
-      onSearchBarClick() {
-        this.$emit('onClick')
-      },
-      onClearClick() {
-        this.searchWord = ''
-        this.$emit('onClear')
-      },
-      onChange(e) {
-        const { value } = e.mp.detail
-        this.$emit('onChange', value)
-      },
-      onConfirm(e) {
-        const { value } = e.mp.detail
-        this.$emit('onConfirm', value)
-      },
-      setValue(v) {
-        this.searchWord = v
-      },
-      getValue() {
-        return this.searchWord
-      }
+    limit: {
+      type: Number,
+      default: 50
+    },
+    hotSearch: {
+      type: String,
+      default: ""
+    }
+  },
+  data() {
+    return {
+      searchWord: ""
+    };
+  },
+  methods: {
+    onSearchBarClick() {
+      this.$emit("onClick");
+    },
+    onClearClick() {
+      this.searchWord = "";
+      this.$emit("onClear");
+    },
+    onChange(e) {
+      const { value } = e.mp.detail;
+      this.$emit("onChange", value);
+    },
+    onConfirm(e) {
+      const { value } = e.mp.detail;
+      this.$emit("onConfirm", value);
+    },
+    setValue(v) {
+      this.searchWord = v;
+    },
+    getValue() {
+      return this.searchWord;
     }
   }
+};
 </script>
 
 <style lang="stylus" scoped>
-  .search-bar
-    padding: 15px 15.5px
-    .search-bar-wrapper
+.search-bar {
+  padding: 15px 15.5px;
+
+  .search-bar-wrapper {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    box-sizing: border-box;
+    background: #F5F7F9;
+    border-radius: 20px;
+    padding: 12px 17px;
+
+    .search-bar-input {
+      flex: 1;
+      margin: 0 8px;
+      color: #333;
+      font-size: 15px;
+    }
+
+    .search, .clear {
       display: flex;
-      align-items: center
-      height: 40px
-      box-sizing: border-box
-      background: #F5F7F9
-      border-radius: 20px
-      padding: 12px 17px
-      .search-bar-input
-        flex: 1
-        margin: 0 8px
-        color: #333
-        font-size: 15px
-      .search, .clear
-        display: flex
-        align-items: center
-        height: 100%
+      align-items: center;
+      height: 100%;
+    }
+  }
+}
 </style>

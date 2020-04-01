@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <van-button type="info">信息按钮</van-button>
     <!-- <searchBar disabled @onClick="onSearchBarkClick" />
     <HomeCard />
     <HomeBanner
@@ -20,7 +21,7 @@
         @onBookClick="onHomeBookClick"
       />
     </div>-->
-    <h1>小程序 test</h1>
+    <!-- <h1>小程序</h1> -->
   </div>
 </template>
 
