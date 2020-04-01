@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>h5</h1>
+    <!-- <h1>h5</h1> -->
     <van-button type="info">信息按钮</van-button>
   </div>
 </template>
@@ -41,8 +41,5 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
-.book-home {
-  margin-top: 23px;
-}
+<style lang="scss" scoped>
 </style>
