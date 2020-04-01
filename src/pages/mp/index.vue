@@ -20,24 +20,24 @@
         @onBookClick="onHomeBookClick"
       />
     </div>-->
-    <h1>h5 小程序</h1>
+    <h1>小程序 test</h1>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
-// import SearchBar from "../../components/home/SearchBar";
-// import HomeCard from "../../components/home/HomeCard";
-// import HomeBanner from "../../components/home/HomeBanner";
-// import HomeBook from "../../components/home/HomeBook";
+import SearchBar from "../../components/home/SearchBar";
+import HomeCard from "../../components/home/HomeCard";
+import HomeBanner from "../../components/home/HomeBanner";
+import HomeBook from "../../components/home/HomeBook";
 import { get } from "../../utils/request";
 
 export default {
   components: {
-    // HomeBook,
-    // HomeBanner,
-    // HomeCard,
-    // SearchBar
+    HomeBook,
+    HomeBanner,
+    HomeCard,
+    SearchBar
   },
   data() {
     return {};
