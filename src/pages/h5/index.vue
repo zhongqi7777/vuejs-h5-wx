@@ -1,15 +1,19 @@
 <template>
   <div class="home">
     <h1>h5</h1>
+    <van-button type="info">信息按钮</van-button>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
 import { get } from "../../utils/request";
+import { Button, Toast } from "vant";
 
 export default {
-  components: {},
+  components: {
+    [Button.name]: Button
+  },
   data() {
     return {};
   },

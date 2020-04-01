@@ -37,10 +37,10 @@ Vue.mixin({
     }
   },
   created() {
-    console.log('chrome')
     this.service = httpService
   }
-})
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

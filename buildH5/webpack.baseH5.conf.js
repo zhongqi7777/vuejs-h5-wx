@@ -4,7 +4,7 @@ const utils = require('./utils')
 const config = require('../configH5')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 const createLintingRule = () => ({
@@ -58,9 +58,9 @@ module.exports = {
         ],
       },
       {
-            test: /\.less$/,
+        test: /\.less$/,
 
-            loader: "style-loader!css-loader!less-loader",
+        loader: "style-loader!css-loader!less-loader",
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
