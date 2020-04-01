@@ -50,13 +50,13 @@ module.exports = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
-      {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     'vue-style-loader',
+      //     'css-loader'
+      //   ],
+      // },
       {
         test: /\.less$/,
 
