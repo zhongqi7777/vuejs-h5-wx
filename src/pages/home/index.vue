@@ -1,25 +1,17 @@
 <template>
   <div class="home">
     <!-- <h1>h5</h1> -->
-    <van-button type="info">信息按钮</van-button>
+    <van-button type="info">h5 小程序2021</van-button>
   </div>
 </template>
 
-
 <script>
+/* eslint-disable */
 import { get } from "../../utils/request";
-import { Button, Toast } from "vant";
-let vant = {};
+// import { Button, Toast } from "vant";
 
-if (process.env.PLATFORM == "h5") {
-  console.log('if (process.env.PLATFORM == "h5") {');
-  vant = require("vant");
-}
-export default {
-  components: {
-    // [Button.name]: Button
-    [vant.Button.name]: vant.Button
-  },
+let instance = {
+  components: {},
   data() {
     return {};
   },
@@ -45,6 +37,22 @@ export default {
     onBannerClick() {}
   }
 };
+
+// console.log("process.env.PLATFORM home", process.env.PLATFORM);
+if (process.env.PLATFORM == "h5") {
+  // components = {
+  //   [Button && Button.name]: Button
+  // };
+  //instance.set();
+  instance = {
+    ...instance,
+    components: {
+      [Button.name]: Button
+    }
+  };
+}
+
+export default instance;
 </script>
 
 <style lang="scss" scoped>

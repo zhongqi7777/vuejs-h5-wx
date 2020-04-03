@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <van-button type="info">信息按钮</van-button>
+    <van-button type="info">信息按钮 小程序</van-button>
     <!-- <searchBar disabled @onClick="onSearchBarkClick" />
     <HomeCard />
     <HomeBanner
@@ -27,18 +27,21 @@
 
 <script>
 /* eslint-disable */
-import SearchBar from "../../components/home/SearchBar";
-import HomeCard from "../../components/home/HomeCard";
-import HomeBanner from "../../components/home/HomeBanner";
-import HomeBook from "../../components/home/HomeBook";
+// import SearchBar from "../../components/home/SearchBar";
+// import HomeCard from "../../components/home/HomeCard";
+// import HomeBanner from "../../components/home/HomeBanner";
+// import HomeBook from "../../components/home/HomeBook";
 import { get } from "../../utils/request";
+import { Button, Toast } from "vant";
 
+// console.log("process.env.PLATFORM 小程序", process.env.PLATFORM);
 export default {
   components: {
-    HomeBook,
-    HomeBanner,
-    HomeCard,
-    SearchBar
+    // HomeBook,
+    // HomeBanner,
+    // HomeCard,
+    // SearchBar
+    [Button.name]: Button
   },
   data() {
     return {};
@@ -67,7 +70,7 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
 .book-home {
   margin-top: 23px;
 }

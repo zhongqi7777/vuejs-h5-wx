@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Vue from "vue";
 import Router from "vue-router";
-import index from "../pages/h5/index.vue";
+import index from "../pages/home/index.vue";
 // import logs from '../pages/logs/index.vue'
 // import counter from '../pages/counter/index.vue'
 
@@ -13,7 +13,6 @@ export default new Router({
       path: "/",
       name: "index",
       component: index,
-      alias: "/pages/h5/maintest"
     },
     // {
     //   path: "/logs",
