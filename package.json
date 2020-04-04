@@ -22,7 +22,7 @@
     "build:my": "node build/build.js my",
     "dev": "node build/dev-server.js wx",
     "start": "node server.js",
-    "build": "node build/build.js wx",
+    "build": "npm run build:h5",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
