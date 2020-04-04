@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
+    "express": "^4.17.1",
     "flyio": "^0.6.14",
     "mpvue": "^2.0.0",
     "mpvue-router-patch": "^2.0.0",
@@ -68,7 +69,6 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "eventsource-polyfill": "^0.9.6",
-    "express": "^4.17.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "friendly-errors-webpack-plugin": "^1.7.0",
