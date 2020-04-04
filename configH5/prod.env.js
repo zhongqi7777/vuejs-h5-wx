@@ -1,4 +1,4 @@
 module.exports = {
   NODE_ENV: '"production"',
-  PLATFORM: JSON.stringify(process.env.npm_config_platform)
+  platform_h5: JSON.stringify(process.env.npm_config_platform)
 }

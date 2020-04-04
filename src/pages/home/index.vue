@@ -38,19 +38,16 @@ let instance = {
   }
 };
 
-// console.log("process.env.PLATFORM home", process.env.PLATFORM);
-if (process.env.PLATFORM == "h5") {
-  // components = {
-  //   [Button && Button.name]: Button
-  // };
-  //instance.set();
-  instance = {
-    ...instance,
-    components: {
-      [Button.name]: Button
-    }
-  };
-}
+//console.log("process.env.PLATFORM home", process.env.platform_h5);
+// if (process.env.PLATFORM == "h5") {
+//   console.log('if (process.env.platform_h5 == "h5") {');
+//   instance = {
+//     ...instance,
+//     components: {
+//       [Button.name]: Button
+//     }
+//   };
+// }
 
 export default instance;
 </script>
