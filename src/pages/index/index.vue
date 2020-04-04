@@ -8,9 +8,8 @@
 <script>
 /* eslint-disable */
 import { get } from "../../utils/request";
-// import { Button, Toast } from "vant";
 
-let instance = {
+export default {
   components: {},
   data() {
     return {};
@@ -37,19 +36,6 @@ let instance = {
     onBannerClick() {}
   }
 };
-
-//console.log("process.env.PLATFORM home", process.env.platform_h5);
-// if (process.env.PLATFORM == "h5") {
-//   console.log('if (process.env.platform_h5 == "h5") {');
-//   instance = {
-//     ...instance,
-//     components: {
-//       [Button.name]: Button
-//     }
-//   };
-// }
-
-export default instance;
 </script>
 
 <style lang="scss" scoped>
