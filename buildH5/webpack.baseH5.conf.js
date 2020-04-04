@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../configH5')
 const vueLoaderConfig = require('./vue-loader.conf')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -30,6 +31,9 @@ module.exports = {
       ? '.' + config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  plugins: [
+    new VueLoaderPlugin()// Vue加载
+  ],
   resolve: {
     extensions: ['.js', '.vue', '.json', '.html'],
     alias: {

@@ -40,7 +40,7 @@ exports.cssLoaders = function (options) {
   }
 
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loader, loaderOptions) {
+  function generateLoaders(loader, loaderOptions) {
     var loaders = [cssLoader, px2rpxLoader, postcssLoader]
     if (loader) {
       loaders.push({
@@ -53,13 +53,23 @@ exports.cssLoaders = function (options) {
 
     // Extract CSS when that option is specified
     // (which is the case during production build)
+    // if (options.extract) {
+    //   return ExtractTextPlugin.extract({
+    //     use: loaders,
+    //     fallback: 'vue-style-loader'
+    //   })
+    // } else {
+    //   return ['vue-style-loader'].concat(loaders)
+    // }
+
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
-        fallback: 'vue-style-loader'
-      })
+        fallback: "vue-style-loader",
+        // publicPath: '../../'
+      });
     } else {
-      return ['vue-style-loader'].concat(loaders)
+      return ["vue-style-loader"].concat(loaders);
     }
   }
 

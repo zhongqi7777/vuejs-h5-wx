@@ -9,6 +9,7 @@ var MpvuePlugin = require('webpack-mpvue-asset-plugin')
 var glob = require('glob')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var relative = require('relative')
+// const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -106,6 +107,7 @@ let baseWebpackConfig = {
     ]
   },
   plugins: [
+    //new VueLoaderPlugin(),// Vue加载
     // api 统一桥协议方案
     new webpack.DefinePlugin({
       'mpvue': 'global.mpvue',
