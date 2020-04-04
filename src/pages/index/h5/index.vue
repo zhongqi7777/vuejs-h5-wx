@@ -1,6 +1,6 @@
 
 <script>
-import home from "../index";
+import home from "../mp/index";
 import { Button } from "vant";
 export default {
   extends: home,
