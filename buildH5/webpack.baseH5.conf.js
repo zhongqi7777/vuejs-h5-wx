@@ -61,11 +61,18 @@ module.exports = {
       //     'css-loader'
       //   ],
       // },
-      {
-        test: /\.less$/,
-
-        loader: "style-loader!css-loader!less-loader",
-      },
+      // {
+      //   test: /\.scss$/,
+      //   use: [
+      //     "style-loader", // creates style nodes from JS strings
+      //     "css-loader", // translates CSS into CommonJS
+      //     "sass-loader" // compiles Sass to CSS, using Node Sass by default
+      //   ]
+      // },
+      // {
+      //   test: /\.less$/,
+      //   loader: "style-loader!css-loader!less-loader",
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',

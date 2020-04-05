@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 body {
   font-size: 16px;
   background-color: #f8f8f8;
