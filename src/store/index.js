@@ -1,25 +1,34 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import * as getters from './getters.js'
+import getters from "./getters";
+import permission from "./modules/permission";
+import createLogger from "@/plugins/logger";
+// import createPersistedState from "vuex-persistedstate";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-/** 状态定义 */
+const debug = process.env.NODE_ENV !== "production";
 
-const store = new Vuex.Store({
-  state: {
-    count: 0
+// const vuexPersisted = new createPersistedState({
+//   key: "myVuex",
+//   storage: window.localStorage,
+//   reducer: state => ({
+//     // PK: {
+//     //   multipleSelection: state.pk.multipleSelection,
+//     //   stepData: state.pk.stepData
+//     // },
+//   })
+//   // filter: mutation => (
+//   //   'CHANGE_LOADING' === mutation.type
+//   // )
+// });
+
+export default new Vuex.Store({
+  getters,
+  modules: {
+    permission
   },
-  mutations: {
-    increment: (state) => {
-      const obj = state
-      obj.count += 1
-    },
-    decrement: (state) => {
-      const obj = state
-      obj.count -= 1
-    }
-  }
-})
-
-export default store
+  strict: debug,
+  plugins: debug ? [createLogger()] : []
+  // plugins: debug ? [createLogger(), vuexPersisted] : [vuexPersisted]
+});

@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 import MpvueRouterPatch from 'mpvue-router-patch'
+import Vuex from 'vuex'
+import store from './store'
+Vue.use(Vuex)
+
+Vue.prototype.$store = store
 
 Vue.use(MpvueRouterPatch)
 Vue.config.productionTip = false
