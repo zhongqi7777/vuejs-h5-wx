@@ -16,6 +16,9 @@ export default {
     logs.unshift(Date.now());
     this.setStorageSync("logs", logs);
   }
+  // mounted() {
+  //   console.log("mpvuePlatform", mpvuePlatform);
+  // }
 };
 </script>
 

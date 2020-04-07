@@ -26,6 +26,9 @@ export default {
   },
   log() {
     console.log(`log at:${Date.now()}`);
+  },
+  mounted() {
+    console.log("mpvuePlatform", mpvuePlatform);
   }
 };
 </script>
