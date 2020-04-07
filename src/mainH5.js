@@ -6,7 +6,7 @@ import Vuex from 'vuex'
 import App from './AppH5'
 import router from './router/index'
 // import wxService from './api/wxService'
-import httpService from './utils/httpService'
+// import httpService from './utils/httpService'
 import store from './store'
 
 Vue.config.productionTip = false
@@ -37,7 +37,7 @@ Vue.mixin({
     }
   },
   created() {
-    this.service = httpService
+    //this.service = httpService
   }
 });
 

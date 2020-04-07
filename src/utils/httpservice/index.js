@@ -8,8 +8,9 @@ const getProjectName = val => {
         case "wx":
             return wx;
         default:
-        // return project1;
+        //return h5;
     }
 };
 
-export default getProjectName(process.env.mpvuePlatform || mpvuePlatform);
+let result = process.env.mpvuePlatform || mpvuePlatform;
+export default getProjectName(result);

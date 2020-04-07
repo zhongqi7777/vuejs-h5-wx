@@ -1,30 +1,17 @@
-// import Fly from 'flyio/dist/npm/wx'
-// 'flyio'(与axios、fentch对比 https://wendux.github.io/dist/#/doc/flyio/compare)
-var Fly = require("flyio/dist/npm/wx") //npm引入方式
+import axios from "@/utils/axios/wx";
+import { Toast } from "vant";
+// import store from '@/store'
 
-const request = new Fly()
+let baseURL = process.env.BASE_URL ? process.env.BASE_URL : "";
+let baseENV = process.env.BASE_ENV;
+baseURL += baseENV;
 
-request.interceptors.request.use((request) => {
-    wx.showLoading({ title: '加载中..' })
-    // wx.showNavigationBarLoading() //显示导航条加载动画。
-    return request
-})
+// create an axios instance
+const service = axios.create({
+    // baseURL: process.env.VUE_APP_BASE_API, // api 的 base_url
+    baseURL: baseURL, // api 的 base_url
+    // withCredentials: true, // 跨域请求时发送 cookies
+    timeout: 5000 // request timeout
+});
 
-request.interceptors.response.use(
-    (response, promise) => {
-        wx.hideLoading()
-        // wx.hideNavigationBarLoading()
-        return promise.resolve(response.data)
-    },
-    (err, promise) => {
-        wx.hideNavigationBarLoading()
-        wx.showToast({
-            title: err.message,
-            icon: 'none',
-            duration: 1000
-        })
-        return promise.resolve()
-    }
-)
-
-export default request
+export default service;

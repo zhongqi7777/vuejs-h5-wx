@@ -1,7 +1,11 @@
-import { get } from '../utils/request'
+// import request from "@/utils/request";
+import request from "@/utils/httpservice/index";
 
-const API_URL = 'https://test.youbaobao.xyz:18081'
+export const getMenu = () => {
+  console.log('export const getMenu = () => {');
+  return request({
+    url: "/list",
+    method: "get"
+  });
+};
 
-export function getHomeData(params) {
-  return get(`${API_URL}/book/home/v2`, params)
-}
