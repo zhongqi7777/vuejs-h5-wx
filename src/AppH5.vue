@@ -15,10 +15,10 @@ export default {
     const logs = this.getStorageSync("logs") || [];
     logs.unshift(Date.now());
     this.setStorageSync("logs", logs);
+  },
+  mounted() {
+    console.log("mpvuePlatform", process.env.mpvuePlatform);
   }
-  // mounted() {
-  //   console.log("mpvuePlatform", mpvuePlatform);
-  // }
 };
 </script>
 
