@@ -18,7 +18,7 @@ yarn run dev:my
 
 # build 对应平台 h5 微信、百度、头条、支付宝
 
-yarn run build:h5 --platform=h5
+npm run build:h5 --platform=h5
 yarn run build:wx
 yarn run build:swan
 yarn run build:tt
