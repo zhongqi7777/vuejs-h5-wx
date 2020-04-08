@@ -1,34 +1,17 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import getters from "./getters";
-import permission from "./modules/permission";
-import createLogger from "@/plugins/logger";
-// import createPersistedState from "vuex-persistedstate";
+import h5 from "./entry/h5";
+import wx from "./entry/wx";
 
-Vue.use(Vuex);
+const getProjectName = val => {
+  switch (val) {
+    case "h5":
+      return h5;
+    case "wx":
+      return wx;
+    default:
+    //return h5;
+  }
+};
 
-const debug = process.env.NODE_ENV !== "production";
-
-// const vuexPersisted = new createPersistedState({
-//   key: "myVuex",
-//   storage: window.localStorage,
-//   reducer: state => ({
-//     // PK: {
-//     //   multipleSelection: state.pk.multipleSelection,
-//     //   stepData: state.pk.stepData
-//     // },
-//   })
-//   // filter: mutation => (
-//   //   'CHANGE_LOADING' === mutation.type
-//   // )
-// });
-
-export default new Vuex.Store({
-  getters,
-  modules: {
-    permission
-  },
-  strict: debug,
-  plugins: debug ? [createLogger()] : []
-  // plugins: debug ? [createLogger(), vuexPersisted] : [vuexPersisted]
-});
+let result = process.env.mpvuePlatform || mpvuePlatform;
+console.log("result", result);
+export default getProjectName(result);

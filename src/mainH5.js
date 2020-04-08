@@ -7,7 +7,7 @@ import App from './AppH5'
 import router from './router/index'
 // import wxService from './api/wxService'
 // import httpService from './utils/httpService'
-import store from './store'
+import store from './store/entry/h5'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)

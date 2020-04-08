@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import MpvueRouterPatch from 'mpvue-router-patch'
 import Vuex from 'vuex'
-import store from './store'
+import store from './store/entry/wx'
 Vue.use(Vuex)
 
 Vue.prototype.$store = store
