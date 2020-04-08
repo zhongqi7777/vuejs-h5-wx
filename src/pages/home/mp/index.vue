@@ -3,6 +3,8 @@
     <!-- <h1>h5</h1> -->
     <van-button type="info" @click="getHomeData">h5 小程序</van-button>
     {{permission.routes}}
+    <br />
+    <div v-for="(item,index) in list" :key="index">{{item.name}}</div>
   </div>
 </template>
 
@@ -13,7 +15,9 @@ import { getMenu } from "@/api/index";
 export default {
   components: {},
   data() {
-    return {};
+    return {
+      list: []
+    };
   },
   mounted() {
     //console.log(this.getHomeData());
@@ -25,10 +29,11 @@ export default {
     ...mapActions(["getMenuData"]),
     getHomeData() {
       getMenu().then(res => {
-        //console.log("res", res);
+        console.log("res", res);
         if (res.data.code == 20000) {
           alert("success!!!");
           //Toast.success("成功文案");
+          this.list = res.data.data;
         }
       });
 

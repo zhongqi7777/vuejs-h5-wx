@@ -2,6 +2,10 @@
 
 > vuejs 开发一套代码,可以构建 H5,小程序(微信,百度,支付宝,今日头条)多个版本
 
+线上地址
+
+https://vuejs-h5-wx.herokuapp.com/#/
+
 ## 具体操作
 
 ```bash
