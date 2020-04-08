@@ -25,9 +25,10 @@ export default {
     ...mapActions(["getMenuData"]),
     getHomeData() {
       getMenu().then(res => {
-        console.log("res", res);
+        //console.log("res", res);
         if (res.data.code == 20000) {
-          Toast.success("成功文案");
+          alert("success!!!");
+          //Toast.success("成功文案");
         }
       });
 
