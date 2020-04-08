@@ -22,12 +22,9 @@
 //     name: 'Normal Editor'
 //   }
 // }
-//BASE_ENV
-
-var baseURL = process.env.BASE_ENV;
 var userlist = [
   {
-    name: "admin2021"
+    name: "admin"
   },
   {
     name: "user1"
