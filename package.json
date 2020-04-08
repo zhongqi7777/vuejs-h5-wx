@@ -22,9 +22,8 @@
     "build:my": "node build/build.js my",
     "dev": "node build/dev-server.js wx",
     "start": "node server.js",
-    "build": "npm run build:h5 --platform=h5",
-    "lint": "eslint --ext .js,.vue src",
-    "mock": "cd mock && node-dev mock-server.js"
+    "build": "npm run build:h5 --platform=h5 --baseenv=api",
+    "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
