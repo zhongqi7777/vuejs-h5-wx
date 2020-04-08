@@ -2,7 +2,7 @@ import axios from "@/utils/axios/wx";
 import { Toast } from "vant";
 // import store from '@/store'
 
-let baseURL = process.env.BASE_URL ? process.env.BASE_URL : "";
+let baseURL = process.env.BASE_URL ? process.env.BASE_URL : "/";
 let baseENV = process.env.BASE_ENV;
 baseURL += baseENV;
 
