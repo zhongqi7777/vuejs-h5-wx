@@ -35,6 +35,10 @@ module.exports = merge(baseWebpackConfig, {
     filename: utils.assetsPath('[name].js'),
     chunkFilename: utils.assetsPath('[id].js')
   },
+  // these devServer options should be customized in /config/index.js
+  devServer: {
+    before: require('../mock/mock-server.js')
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': config.dev.env
