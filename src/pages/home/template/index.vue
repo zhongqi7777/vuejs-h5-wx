@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- <h1>h5</h1> -->
-    <van-button type="info" @click="getHomeData">h5 小程序</van-button>
+    <van-button type="info" @click="getHomeData">h5 小程序 template 2021</van-button>
     {{permission.routes}}
     <br />
     <div v-for="(item,index) in list" :key="index">{{item.name}}</div>
