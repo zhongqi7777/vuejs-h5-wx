@@ -11,7 +11,7 @@ https://vuejs-h5-wx.herokuapp.com/#/
 ```bash
 
 # 安装依赖
-yarn
+yar
 
 # dev 对应平台 h5 微信、百度、头条、支付宝
 npm run dev:h5 --platform=h5

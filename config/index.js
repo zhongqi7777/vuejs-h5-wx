@@ -1,32 +1,35 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 var fileExtConfig = {
-    swan: {
-        template: 'swan',
-        script: 'js',
-        style: 'css',
-        platform: 'swan'
-    },
-    tt: {
-        template: 'ttml',
-        script: 'js',
-        style: 'ttss',
-        platform: 'tt'
-    },
-    wx: {
-        template: 'wxml',
-        script: 'js',
-        style: 'wxss',
-        platform: 'wx'
-    },
-    my: {
-        template: 'axml',
-        script: 'js',
-        style: 'acss',
-        platform: 'my'
-    }
+  swan: {
+    template: 'swan',
+    script: 'js',
+    style: 'css',
+    platform: 'swan'
+  },
+  tt: {
+    template: 'ttml',
+    script: 'js',
+    style: 'ttss',
+    platform: 'tt'
+  },
+  wx: {
+    template: 'wxml',
+    script: 'js',
+    style: 'wxss',
+    platform: 'wx'
+  },
+  my: {
+    template: 'axml',
+    script: 'js',
+    style: 'acss',
+    platform: 'my'
+  }
 }
 var fileExt = fileExtConfig[process.env.PLATFORM]
+
+const HOST = process.env.npm_config_host;
+const PORT = process.env.npm_config_port && Number(process.env.npm_config_port);
 
 module.exports = {
   build: {
@@ -56,7 +59,23 @@ module.exports = {
     autoOpenBrowser: false,
     assetsSubDirectory: '',
     assetsPublicPath: '/',
-    proxyTable: {},
+    //依据参数 baseenv 确定代理环境
+    proxyTable: {
+      "/mock/": {
+        target: `http://${HOST ? HOST : "localhost"}:8080`,
+        changeOrigin: false,
+        pathRewrite: {
+          "^/mock": ""
+        }
+      },
+      "/api/": {
+        target: `http://${HOST ? HOST : "localhost"}:8080`,
+        changeOrigin: false,
+        pathRewrite: {
+          "^/api": ""
+        }
+      }
+    },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)

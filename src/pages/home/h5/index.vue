@@ -1,11 +1,11 @@
 
 <script>
-import { getMenu } from "@/api/index";
-import home from "../mp/index";
+import tmp from "../template/index";
 import { Button } from "vant";
 export default {
-  extends: home,
+  extends: tmp,
   components: {
+    tmp,
     [Button.name]: Button
   }
 };
