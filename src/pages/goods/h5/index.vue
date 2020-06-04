@@ -1,6 +1,6 @@
 
 <script>
-import tmp from "../template/index";
+import tmp from "../base/index";
 import {
   Tag,
   Col,
@@ -13,10 +13,10 @@ import {
   GoodsAction,
   GoodsActionIcon,
   GoodsActionButton
-} from 'vant';
+} from "vant";
 export default {
   extends: tmp,
-    components: {
+  components: {
     [Tag.name]: Tag,
     [Col.name]: Col,
     [Icon.name]: Icon,
@@ -28,45 +28,10 @@ export default {
     [GoodsActionIcon.name]: GoodsActionIcon,
     [GoodsActionButton.name]: GoodsActionButton
   },
+  methods: {
+    sorry() {
+      Toast("暂无后续逻辑~ h5");
+    }
+  }
 };
 </script>
-
-
-<style lang="less">
-.goods {
-  padding-bottom: 50px;
-
-  &-swipe {
-    img {
-      width: 100%;
-      display: block;
-    }
-  }
-
-  &-title {
-    font-size: 16px;
-  }
-
-  &-price {
-    color: #f44;
-  }
-
-  &-express {
-    color: #999;
-    font-size: 12px;
-    padding: 5px 15px;
-  }
-
-  &-cell-group {
-    margin: 15px 0;
-
-    .van-cell__value {
-      color: #999;
-    }
-  }
-
-  &-tag {
-    margin-left: 5px;
-  }
-}
-</style>
