@@ -30,6 +30,8 @@ export default {
   },
   methods: {
     sorry() {
+      console.log(" sorry() { h5");
+      console.log("goods",this.goods);
       Toast("暂无后续逻辑~ h5");
     }
   }

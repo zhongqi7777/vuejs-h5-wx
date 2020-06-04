@@ -64,6 +64,7 @@ export default {
     },
 
     sorry() {
+      console.log("sorry() { wx");
       wx.showToast({
         title: "暂无后续逻辑~ wx",
         icon: "none"
@@ -74,48 +75,41 @@ export default {
 </script>
 
 <style lang="less">
-.goods-img {
-  width: 100%;
-  display: block;
-}
+.goods {
+  padding-bottom: 50px;
 
-.goods-message .van-cell__title {
-  font-size: 16px;
-}
+  &-swipe {
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
 
-.goods-message .van-cell__label {
-  color: #f44;
-}
+  &-title {
+    font-size: 16px;
+  }
 
-.goods-express {
-  color: #999;
-  font-size: 12px;
-}
+  &-price {
+    color: #f44;
+  }
 
-.goods-express .van-cell {
-  color: #999;
-  font-size: 12px;
-  padding: 5px 15px;
-}
+  &-express {
+    color: #999;
+    font-size: 12px;
+    padding: 5px 15px;
+  }
 
-.goods-express .van-col {
-  text-align: left;
-}
+  &-cell-group {
+    margin: 15px 0;
 
-.goods-cell-group {
-  margin: 0 0;
-}
+    .van-cell__value {
+      color: #999;
+    }
+  }
 
-.goods-cell-group .van-cell__value {
-  color: #999;
-}
-
-.goods-tag {
-  margin-left: 5px;
-}
-
-.goods-action {
-  position: relative!important;
+  &-tag {
+    margin-left: 5px;
+  }
 } 
 
 </style>

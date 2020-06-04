@@ -6,7 +6,7 @@
 import tmp from "../base/index";
 export default {
   // extends: tmp
-  components:{
+  components: {
     tmp
   }
 };
