@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/goods/mp/main"
+    "pages/login/mp/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
