@@ -1,8 +1,7 @@
-// https://github.com/michael-ciniawsky/postcss-load-config
+// // https://github.com/michael-ciniawsky/postcss-load-config
 
-module.exports = {
+module.exports = process.env.npm_config_platform=== 'h5' ? {
   "plugins": {
-    "postcss-mpvue-wxss": {},
     "postcss-px-to-viewport": {
       viewportWidth: 750, // 视窗的宽度，对应的是我们设计稿的宽度，一般是750.
       viewportHeight: 1334, // 视窗的高度，根据750设备的宽度来指定，一般指定1334.
@@ -12,5 +11,9 @@ module.exports = {
       minPixelValue: 1, // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值.
       mediaQuery: false // 允许在媒体查询中转换`px`.
     }
+  }
+} : {
+  "plugins": {
+    "postcss-mpvue-wxss": {}
   }
 }

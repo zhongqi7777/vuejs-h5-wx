@@ -1,11 +1,70 @@
 
 page {
-  font-size: 2.133vw;
+  font-size: 16px;
   background-color: #f8f8f8;
   -webkit-font-smoothing: antialiased;
 }
 
-.home[data-v-0959ee72] {
-  height: 40vw;
-  background: red;
+.home[data-v-265535d6]{height:300px;background:red
+}
+
+.goods {
+  padding-bottom: 50px;
+}
+.goods-swipe ._img {
+  height: 500px;
+  width: 100%;
+  display: block;
+}
+.goods-title {
+  font-size: 16px;
+}
+.goods-price {
+  color: #f44;
+}
+.goods-express {
+  color: #999;
+  font-size: 12px;
+  padding: 5px 15px;
+}
+.goods-cell-group {
+  margin: 15px 0;
+}
+.goods-cell-group .van-cell__value {
+  color: #999;
+}
+.goods-tag {
+  margin-left: 5px;
+}
+
+.logo[data-v-2f082975] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+    height: 320px;
+  color: white;
+  background-color: #f44;
+  font-size: 64px;
+}
+.panel[data-v-2f082975] {
+  position: relative;
+  top: -60px;
+  padding: 40px 40px 60px 40px;
+  box-shadow: 0 0 10px 1px rgb(173, 173, 173);
+  background-color: white;
+}
+.button[data-v-2f082975] {
+  position: relative;
+  top: -100px;
+}
+.helper[data-v-2f082975] {
+  display: flex;
+  justify-content: space-between;
+}
+.text-helper[data-v-2f082975] {
+  display: inline-block;
+  padding: 12px 0;
+  color: #f44;
+  font-size: 14px;
 }

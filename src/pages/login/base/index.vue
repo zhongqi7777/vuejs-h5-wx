@@ -197,10 +197,10 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-    height: 320px;
+    height: 320rpx;
   color: white;
   background-color: #f44;
-  font-size: 64px;
+  font-size: 64rpx;
 }
 .panel {
   position: relative;
@@ -222,6 +222,6 @@ export default {
   display: inline-block;
   padding: 12px 0;
   color: #f44;
-  font-size: 14px;
+  font-size: 14rpx;
 }
 </style>
