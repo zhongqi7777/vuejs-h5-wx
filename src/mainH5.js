@@ -9,6 +9,9 @@ import router from './router/index'
 // import httpService from './utils/httpService'
 import store from './store/entry/h5'
 
+// 全局引入rem
+import './utils/rem'
+
 Vue.config.productionTip = false
 Vue.use(Vuex)
 Vue.mixin({
