@@ -16,25 +16,26 @@ export default new Router({
     }
   },
   routes: [
-    {
-      path: '/',
-      redirect: '/dashboard',
-      // 是否数据缓存
-      // meta: {
-      //     keepAlive: true
-      // },
-  },
-  {
-    path: "/dashboard",
-    name: "dashbord",
-    component: () => import('../pages/dashboard/h5/index.vue')
-  }
 
-  //demo
-  //   {
-  //   path: "/",
-  //   name: "",
-  //   component: () => import('../pages/demo/h5/index.vue')
-  // }
-]
+      {
+        path: '/',
+        redirect: '/dashboard',
+        // 是否数据缓存
+        // meta: {
+        //     keepAlive: true
+        // },
+    },
+    {
+      path: "/dashboard",
+      name: "dashbord",
+      component: () => import('../pages/dashboard/h5/index.vue')
+    }
+
+    //demo
+    //   {
+    //   path: "/",
+    //   name: "",
+    //   component: () => import('../pages/demo/h5/index.vue')
+    // }
+  ]
 });
