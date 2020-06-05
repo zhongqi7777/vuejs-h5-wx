@@ -1,12 +1,12 @@
 
 <script>
-    // "van-row": "/static/vant/row/index",
-    // "van-col": "/static/vant/col/index",
-    // "van-tab": "/static/vant/tab/index",
-    // "van-tabs": "/static/vant/tabs/index",
-    // "van-cell-group": "/static/vant/cell-group/index",
-    // "van-field": "/static/vant/field/index",
-    // "van-button": "/static/vant/button/index"
+// "van-row": "/static/vant/row/index",
+// "van-col": "/static/vant/col/index",
+// "van-tab": "/static/vant/tab/index",
+// "van-tabs": "/static/vant/tabs/index",
+// "van-cell-group": "/static/vant/cell-group/index",
+// "van-field": "/static/vant/field/index",
+// "van-button": "/static/vant/button/index"
 import tmp from "../base/index";
 import {
   Tag,
@@ -29,9 +29,9 @@ import {
 export default {
   extends: tmp,
   components: {
-    [Button.name]:Button,
-    [Row.name]:Row,
-    [Field.name]:Field,
+    [Button.name]: Button,
+    [Row.name]: Row,
+    [Field.name]: Field,
     [Tab.name]: Tab,
     [Tabs.name]: Tabs,
     [Col.name]: Col,
@@ -44,8 +44,7 @@ export default {
     [GoodsActionIcon.name]: GoodsActionIcon,
     [GoodsActionButton.name]: GoodsActionButton
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
 
@@ -55,7 +54,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-    height: 320px;
+  height: 20rem;
   color: white;
   background-color: #f44;
   font-size: 64rpx;
