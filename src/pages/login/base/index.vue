@@ -191,15 +191,16 @@ export default {
 }
 </script>
 
+
 <style scoped>
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-    height: 320rpx;
+    height: 320px;
   color: white;
-  background-color: #f44;
+  background-color: rgb(186, 68, 255);
   font-size: 64rpx;
 }
 .panel {
@@ -222,6 +223,6 @@ export default {
   display: inline-block;
   padding: 12px 0;
   color: #f44;
-  font-size: 14rpx;
+  font-size: 14px;
 }
 </style>
