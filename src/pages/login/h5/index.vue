@@ -1,13 +1,6 @@
 
 <script>
-// "van-row": "/static/vant/row/index",
-// "van-col": "/static/vant/col/index",
-// "van-tab": "/static/vant/tab/index",
-// "van-tabs": "/static/vant/tabs/index",
-// "van-cell-group": "/static/vant/cell-group/index",
-// "van-field": "/static/vant/field/index",
-// "van-button": "/static/vant/button/index"
-import tmp from "../base/index";
+import tmp from "../mp/index";
 import {
   Tag,
   Col,
