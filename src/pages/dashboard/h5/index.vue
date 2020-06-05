@@ -37,33 +37,33 @@ export default {
         {
           name: "home",
           title: "home.home",
-          normal: require("@/assets/images/tabbar/home_default.png"),
-          active: require("@/assets/images/tabbar/home_selected.png")
+          normal: require("static/images/tabbar/home_default.png"),
+          active: require("static/images/tabbar/home_selected.png")
         },
         {
           name: "category",
           title: "home.category",
-          normal: require("@/assets/images/tabbar/category_default.png"),
-          active: require("@/assets/images/tabbar/category_selected.png")
+          normal: require("static/images/tabbar/category_default.png"),
+          active: require("static/images/tabbar/category_selected.png")
         },
         {
           name: "eat",
           title: "home.eat",
-          normal: require("@/assets/images/tabbar/eat_default.png"),
-          active: require("@/assets/images/tabbar/eat_selected.png")
+          normal: require("static/images/tabbar/eat_default.png"),
+          active: require("static/images/tabbar/eat_selected.png")
         },
         {
           name: "cart",
           title: "home.cart",
-          normal: require("@/assets/images/tabbar/shoppingcart_default.png"),
-          active: require("@/assets/images/tabbar/shoppingcart_selected.png"),
+          normal: require("static/images/tabbar/shoppingcart_default.png"),
+          active: require("static/images/tabbar/shoppingcart_selected.png"),
           num: 5
         },
         {
           name: "mine",
           title: "home.mine",
-          normal: require("@/assets/images/tabbar/mine_default.png"),
-          active: require("@/assets/images/tabbar/mine_selected.png")
+          normal: require("static/images/tabbar/mine_default.png"),
+          active: require("static/images/tabbar/mine_selected.png")
         }
       ]
     };

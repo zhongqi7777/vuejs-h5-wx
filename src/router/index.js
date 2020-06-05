@@ -72,7 +72,7 @@ const router= new Router({
       },
       {
         path: 'cart',
-        name: 'mine',
+        name: 'cart',
         component: () => import('../pages/cart/h5/index.vue'),
         // 是否数据缓存
         meta: {
