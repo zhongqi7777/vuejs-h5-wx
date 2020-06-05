@@ -6,12 +6,28 @@ import Vuex from 'vuex'
 import App from './AppH5'
 import router from './router/index'
 import store from './store/entry/h5'
+import FastClick from 'fastclick'
+import './icons' // icon
+import VueI18n from "vue-i18n";
+import i18n from "./i18n/index";
+// 多语言
+Vue.use(VueI18n, {
+  i18n: (key, value) => i18n.t(key, value)
+});
+
 
 // 全局引入rem
 import '@/utils/rem'
 
 // 全局引入UI库 vant
 import '@/plugins/vant'
+
+// 解决移动端点击延迟200ms的问题
+if ('addEventListener' in document) {
+  document.addEventListener('DOMContentLoaded', function () {
+      FastClick.attach(document.body);
+  }, false);
+}
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
@@ -51,7 +67,8 @@ new Vue({
   router,
   components: { App },
   template: '<App/>',
-  store
+  store,
+  i18n
 })
 
 

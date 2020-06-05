@@ -13,7 +13,7 @@
         :info="item.name == 'cart' ? goodsNum : ''"
       >
         <span :class="currIndex == index ? active : ''">
-        {{item.title}}
+        {{ $t(item.title)}}
         </span>
         <template slot="icon" slot-scope="props">
           <img :src="props.active ? item.active : item.normal" />
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations, mapActions } from 'vuex'
 export default {
   name: "DashBoard",
   data() {
@@ -64,7 +65,13 @@ export default {
         }
       ]
     };
-  }
+  },
+    computed: {
+    //...mapState(['shopCart'], ['userInfo']),
+    goodsNum() {
+     return 1
+    }
+  },
 };
 </script>
 
