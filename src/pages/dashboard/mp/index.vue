@@ -1,37 +1,22 @@
 
 <template>
   <div>
-    <van-tabbar :active="active1" :fixed="isfixed" @change="onChange1"  :active-color="activecolor">
-      <!-- <van-tabbar-item info="3">
-        <image
-          slot="icon"
-          :src="require('@/assets/images/tabbar/home_default.png')"
-          mode="aspectFit"
-        />
-        <image
-          slot="icon-active"
-          :src="require('@/assets/images/tabbar/home_selected.png')"
-          mode="aspectFit"
-        />自定义
-      </van-tabbar-item> -->
-       <van-tabbar-item>
-        <image
-          slot="icon"
-          src="/static/images/tabbar/home_default.png"
-          mode="aspectFit"
-          class="img"
-          
-        />
+    <van-tabbar
+      :active="active1"
+      :fixed="isfixed"
+      @change="onChange1"
+      :active-color="activecolor"
+      :safe-area-inset-bottom="true"
+    >
+      <van-tabbar-item v-for="(item,index) in tabbars" :key="index" :info="item.num?item.num:''">
+        <image slot="icon" :src="item.normal" mode="aspectFit" class="img" />
         <image
           slot="icon-active"
-          src="/static/images/tabbar/home_selected.png"
+          :src="item.active"
           mode="aspectFit"
           class="img"
-         
-        />自定义
+        />{{item.text}}
       </van-tabbar-item>
-      <van-tabbar-item icon="search">标签</van-tabbar-item>
-      <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -41,42 +26,47 @@ export default {
   name: "DashBoard",
   data() {
     return {
-       activecolor:"rgb(117, 163, 66)",
-      isfixed: false,
+      activecolor: "rgb(117, 163, 66)",
+      isfixed: true,
       active1: 0,
-    //   tabbars: [
-    //     {
-    //       name: "home",
-    //       title: "home.home",
-    //       normal: require("@/assets/images/tabbar/home_default.png"),
-    //       active: require("@/assets/images/tabbar/home_selected.png")
-    //     },
-    //     {
-    //       name: "category",
-    //       title: "home.category",
-    //       normal: require("@/assets/images/tabbar/category_default.png"),
-    //       active: require("@/assets/images/tabbar/category_selected.png")
-    //     },
-    //     {
-    //       name: "eat",
-    //       title: "home.eat",
-    //       normal: require("@/assets/images/tabbar/eat_default.png"),
-    //       active: require("@/assets/images/tabbar/eat_selected.png")
-    //     },
-    //     {
-    //       name: "cart",
-    //       title: "home.cart",
-    //       normal: require("@/assets/images/tabbar/shoppingcart_default.png"),
-    //       active: require("@/assets/images/tabbar/shoppingcart_selected.png"),
-    //       num: 5
-    //     },
-    //     {
-    //       name: "mine",
-    //       title: "home.mine",
-    //       normal: require("@/assets/images/tabbar/mine_default.png"),
-    //       active: require("@/assets/images/tabbar/mine_selected.png")
-    //     }
-    //   ]
+      tabbars: [
+        {
+          name: "home",
+          title: "home.home",
+          normal: "/static/images/tabbar/home_default.png",
+          active: "/static/images/tabbar/home_selected.png",
+          text: "首页"
+        },
+        {
+          name: "category",
+          title: "home.category",
+          normal: "/static/images/tabbar/category_default.png",
+          active: "/static/images/tabbar/category_selected.png",
+          text: "分类"
+        },
+        {
+          name: "eat",
+          title: "home.eat",
+          normal: "/static/images/tabbar/eat_default.png",
+          active: "/static/images/tabbar/eat_selected.png",
+          text: "吃什么"
+        },
+        {
+          name: "cart",
+          title: "home.cart",
+          normal: "/static/images/tabbar/shoppingcart_default.png",
+          active: "/static/images/tabbar/shoppingcart_selected.png",
+          num: 5,
+          text: "购物车"
+        },
+        {
+          name: "mine",
+          title: "home.mine",
+          normal: "/static/images/tabbar/mine_default.png",
+          active: "/static/images/tabbar/mine_selected.png",
+          text: "我的"
+        }
+      ]
     };
   },
   methods: {
@@ -89,7 +79,7 @@ export default {
 </script>
 
 <style  lang="less" scoped>
-.img{
+.img {
   height: 18px;
   width: 18px;
 }

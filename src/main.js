@@ -5,7 +5,16 @@ import Vuex from 'vuex'
 import store from './store/entry/wx'
 Vue.use(Vuex)
 
+// import VueI18n from "vue-i18n";
+// import i18n from "./i18n/index";
+// // 多语言
+// Vue.use(VueI18n, {
+//   i18n: (key, value) => i18n.t(key, value)
+// });
+
+
 Vue.prototype.$store = store
+// Vue.prototype.$i18n = i18n
 
 Vue.use(MpvueRouterPatch)
 Vue.config.productionTip = false
