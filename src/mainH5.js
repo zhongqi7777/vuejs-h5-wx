@@ -5,12 +5,13 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './AppH5'
 import router from './router/index'
-// import wxService from './api/wxService'
-// import httpService from './utils/httpService'
 import store from './store/entry/h5'
 
 // 全局引入rem
-import './utils/rem'
+import '@/utils/rem'
+
+// 全局引入UI库 vant
+import '@/plugins/vant'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)

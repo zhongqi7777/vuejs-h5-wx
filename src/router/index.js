@@ -1,7 +1,6 @@
 /* eslint-disable */
 import Vue from "vue";
 import Router from "vue-router";
-import login from "../pages/login/h5/index.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -9,7 +8,7 @@ export default new Router({
     {
       path: "/",
       name: "index",
-      component: login,
+      component: () => import('../pages/login/h5/index.vue')
     }
   ]
 });
