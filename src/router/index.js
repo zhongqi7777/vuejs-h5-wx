@@ -3,7 +3,12 @@ import Vue from "vue";
 import Router from "vue-router";
 Vue.use(Router);
 
-export default new Router({
+const routerPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error=> error)
+}
+
+const router= new Router({
   // 解决路由跳转页面没有置顶
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
@@ -17,19 +22,78 @@ export default new Router({
   },
   routes: [
 
-      {
-        path: '/',
-        redirect: '/dashboard',
-        // 是否数据缓存
-        // meta: {
-        //     keepAlive: true
-        // },
+    {
+      path: '/',
+      redirect: '/dashboard',
+      // 是否数据缓存
+      // meta: {
+      //     keepAlive: true
+      // },
     },
     {
       path: "/dashboard",
       name: "dashbord",
-      component: () => import('../pages/dashboard/h5/index.vue')
+      component: () => import('../pages/dashboard/h5/index.vue'),
+      children: [{
+        path: '/dashboard',
+        redirect: '/dashboard/home',
+        // 是否数据缓存
+
+        meta: {
+          keepAlive: true
+        }
+      }, {
+        // 主页
+        path: 'home',
+        name: 'home',
+        component: () => import('../pages/home/h5/index.vue'),
+        // 是否数据缓存
+        meta: {
+          keepAlive: true
+        }
+      },
+      {
+        path: 'category',
+        name: 'category',
+        component: () => import('../pages/category/h5/index.vue'),
+        // 是否数据缓存
+        meta: {
+          keepAlive: true
+        }
+      },
+      {
+        path: 'eat',
+        name: 'eat',
+        component: () => import('../pages/eat/h5/index.vue'),
+        // 是否数据缓存
+        meta: {
+          keepAlive: true
+        }
+      },
+      {
+        path: 'cart',
+        name: 'mine',
+        component: () => import('../pages/cart/h5/index.vue'),
+        // 是否数据缓存
+        meta: {
+          keepAlive: true
+        }
+      },
+      {
+        path: 'mine',
+        name: 'mine',
+        component: () => import('../pages/mine/h5/index.vue'),
+        // 是否数据缓存
+        meta: {
+          keepAlive: true
+        }
+      }
+    ]
     }
+
+
+
+
 
     //demo
     //   {
@@ -39,3 +103,21 @@ export default new Router({
     // }
   ]
 });
+
+
+//路由守卫
+router.beforeEach((to, from, next) => {
+  if (to.meta.requireAuth) {
+      if (state.userInfo.token) {
+          next()
+      } else {
+          next({
+              path: '/login'
+          })
+      }
+  } else {
+      next()
+  }
+})
+
+export default router
