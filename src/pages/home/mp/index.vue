@@ -7,7 +7,7 @@
 
 <script>
 import vTabBar from "@/pages/dashboard/mp/index";
-import vImageView from "@/components/base/imageView";
+// import vImageView from "@/components/base/imageView";
 const phoneRegExp = /^1(3|4|5|6|7|8|9)\d{9}$/;
 const passwordRegExp = /^\S{5,}$/;
 const codeRegExp = /^\S{4}$/;
