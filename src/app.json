@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/home/mp/main"
+    "pages/dashboard/mp/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -9,8 +9,7 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
-    "van-button": "vant-weapp/dist/button/index",
-    "van-icon": "vant-weapp/dist/icon/index",
-    "van-dialog": "vant-weapp/dist/dialog/index"
+
   }
+  
 }
