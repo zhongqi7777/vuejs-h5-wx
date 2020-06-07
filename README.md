@@ -86,7 +86,7 @@ Please read [CONTRIBUTING.md](#) for details on our code of conduct, and the pro
 
 ## Authors 关于作者
 
-- **WangYan** - _Initial work_ - [WangYan](https://wangyan.org)
+- **YanLiBo** - _Initial work_ - [WangYan](https://ylb.org)
 
 查看更多关于这个项目的贡献者，请阅读 [contributors](#)
 
