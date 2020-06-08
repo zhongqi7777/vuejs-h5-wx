@@ -2,7 +2,7 @@
 <template>
   <div>
     <van-tabbar
-      :active="dashboard.activeTab"
+      :active="dashboard&&dashboard.activeTab"
       :fixed="isfixed"
       @change="onChange1"
       :active-color="activecolor"
@@ -75,7 +75,11 @@ export default {
 
      let tab= this.tabbars[this.active1];
 
-     this.$router.push({ path: `/pages/${tab.name}/mp/main`, query: { id:tab.name  } })
+    // this.$router.push({ path: `/pages/${tab.name}/mp/main`, query: { id:tab.name  } })
+
+    console.log(`/pages/${tab.name}/mp/main`);
+
+    this.$router.push({ name:tab.name, query: { id:tab.name  }})
 
       //this.$emit("onTabsChange", this.tabbars[this.active1]);
     }
