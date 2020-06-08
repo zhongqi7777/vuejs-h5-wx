@@ -8,9 +8,5 @@
     "navigationBarTitleText": "小慕读书",
     "navigationBarTextStyle": "black"
   },
-  "usingComponents": {
-    "van-button": "vant-weapp/dist/button/index",
-    "van-icon": "vant-weapp/dist/icon/index",
-    "van-dialog": "vant-weapp/dist/dialog/index"
-  }
+  "usingComponents": {}
 }

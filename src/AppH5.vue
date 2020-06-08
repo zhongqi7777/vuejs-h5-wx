@@ -7,6 +7,18 @@
 <script>
 /* eslint-disable */
 
+// 禁止手机端扩大和缩小手势
+window.onload = function () {
+  document.addEventListener('touchstart', function (event) {
+    if (event.touches.length > 1) {
+      event.preventDefault()
+    }
+  })
+  document.addEventListener('gesturestart', function (event) {
+    event.preventDefault()
+  })
+}
+
 export default {
   name: "App",
   created() {
@@ -17,15 +29,20 @@ export default {
     this.setStorageSync("logs", logs);
   },
   mounted() {
-    console.log("mpvuePlatform", process.env.mpvuePlatform);
+   // console.log("mpvuePlatform", process.env.mpvuePlatform);
   }
 };
 </script>
 
-<style>
-body {
-  font-size: 16px;
-  background-color: #f8f8f8;
-  -webkit-font-smoothing: antialiased;
+<style lang="less">
+#app {
+  width: 100%;
+  height: 100%;
+}
+/** 解决 [Intervention] Unable to preventDefault 
+inside passive event listener due to target being treated as
+**/
+* {
+  touch-action: pan-y;
 }
 </style>
