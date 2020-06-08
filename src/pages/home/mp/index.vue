@@ -49,33 +49,33 @@ export default {
     onTabsChange(event) {
       
      // console.log(' onTabsChange(event) {',event);
-      this.$router.push(`/pages/${event.name}/mp/main`);
+     // this.$router.push(`/pages/${event.name}/mp/main`);
     }
   },
-  beforeCreate() {
-    console.log("beforeCreate");
-  },
-  created() {
-    console.log("created");
-  },
+  // beforeCreate() {
+  //   console.log("beforeCreate home");
+  // },
+  // created() {
+  //   console.log("created home");
+  // },
   beforeMount() {
-    console.log("beforeMount");
+    console.log("beforeMount home");
   },
   mounted() {
-    console.log("mounted");
+    console.log("mounted home",this.$route.query.id);
   },
-  beforeUpdate() {
-    console.log("beforeUpdate");
-  },
-  updated() {
-    console.log("updated");
-  },
-  beforeDestroy() {
-    console.log("beforeDestroy");
-  },
-  destroyed() {
-    console.log("destroyed");
-  }
+  // beforeUpdate() {
+  //   console.log("beforeUpdate home");
+  // },
+  // updated() {
+  //   console.log("updated home");
+  // },
+  // beforeDestroy() {
+  //   console.log("beforeDestroy home");
+  // },
+  // destroyed() {
+  //   console.log("destroyed home");
+  // }
 };
 </script>
 

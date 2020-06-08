@@ -114,6 +114,8 @@ export default {
 
       //第二种传参方式
       this.$router.push({name:val,params:{id:val}});
+
+      //this.$store.dispatch("dashboard/setActiveTab", 1);
     },
     tabbarSelected(item) {
       const mapType = {

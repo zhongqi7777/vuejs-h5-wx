@@ -2,7 +2,7 @@
 <template>
   <div>
     <van-tabbar
-      :active="active1"
+      :active="dashboard.activeTab"
       :fixed="isfixed"
       @change="onChange1"
       :active-color="activecolor"
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions, mapState } from "vuex";
 export default {
   name: "DashBoard",
   data() {
@@ -68,10 +69,19 @@ export default {
   methods: {
     onChange1(event) {
       //最好手动赋值一下,要不值不是最新的
-      this.active1 = event.mp.detail;
+     this.active1 = event.mp.detail;
 
-      this.$emit("onTabsChange",this.tabbars[this.active1]);
+     this.$store.dispatch("dashboard/setActiveTab", this.active1);
+
+     let tab= this.tabbars[this.active1];
+
+     this.$router.push({ path: `/pages/${tab.name}/mp/main`, query: { id:tab.name  } })
+
+      //this.$emit("onTabsChange", this.tabbars[this.active1]);
     }
+  },
+  computed:{
+      ...mapState(["dashboard"])
   }
 };
 </script>

@@ -13,5 +13,4 @@ const getProjectName = val => {
 };
 
 let result = process.env.mpvuePlatform || mpvuePlatform;
-console.log("result", result);
 export default getProjectName(result);

@@ -49,9 +49,17 @@ export default {
 
     onTabsChange(event) {
         //this.$router.push({ path: '/pages/home/mp/main' })
-        this.$router.push(`/pages/${event.name}/mp/main`);
+        //this.$router.push(`/pages/${event.name}/mp/main`);
+
+        // this.$router.push({ path: `/pages/${event.name}/mp/main`, query: { id:event.name  } })
     }
-  }
+  },
+    beforeMount() {
+    console.log("beforeMount category");
+  },
+  mounted() {
+    console.log("mounted category ",this.$route.query.id);
+  },
 };
 </script>
 
