@@ -70,8 +70,6 @@ export default {
       //最好手动赋值一下,要不值不是最新的
       this.active1 = event.mp.detail;
 
-      console.log(this.active1 );
-
       this.$emit("onTabsChange",this.tabbars[this.active1]);
     }
   }
