@@ -1,6 +1,6 @@
 
 <script>
-import tmp from "../mp/index";
+import tmp from "../page/index";
 import {
   Tag,
   Col,
