@@ -89,9 +89,27 @@ export default {
   },
   methods: {
     // 1.点击tabbar触发的方法
+
+    // router 传参方式
+    // 第一种
+    //传递参数  -- this.$router.push({path: ' 路由 ', query: {key: value}})
+    //参数取值  -- this.$route.query.key
+
+    //第二种
+    //传递参数  -- this.$router.push({name: ' 路由的name ', params: {key: value}})
+    //参数取值  -- this.$route.params.key
+
+    //备注
+    //第二种传参方式
+    //使用这种方式，参数不会拼接在路由后面，地址栏上看不到参数、
+    //由于动态路由也是传递params的，所以在 this.$router.push() 方法中 path不能和params一起使用，否则params将无效。需要用name来指定页面。
+    //及通过路由配置的name属性访问
     tab(index, val) {
       this.currIndex = index;
-      this.$router.push(val);
+      //this.$router.push(val);
+
+      this.$router.push({path:val,query:{id:val}});
+      // console.log(index,val);
     },
     tabbarSelected(item) {
       const mapType = {

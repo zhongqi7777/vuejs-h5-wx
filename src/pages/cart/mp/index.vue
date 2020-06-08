@@ -146,4 +146,5 @@ export default {
 
 
 <style scoped>
+@import "./index.less";
 </style>
