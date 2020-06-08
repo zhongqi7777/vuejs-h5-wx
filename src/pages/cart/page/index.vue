@@ -1,14 +1,8 @@
 <template>
-  <div class="container">
-    <vPage></vPage>
-    <vTabBar></vTabBar>
-  </div>
+ <div class="logo">cart</div>
 </template>
 
 <script>
-import vPage from "../page/index";
-import vTabBar from "@/pages/dashboard/mp/index";
-// import vImageView from "@/components/base/imageView";
 const phoneRegExp = /^1(3|4|5|6|7|8|9)\d{9}$/;
 const passwordRegExp = /^\S{5,}$/;
 const codeRegExp = /^\S{4}$/;
@@ -41,8 +35,6 @@ export default {
   },
 
   components: {
-    vTabBar,
-    vPage
   },
 
   methods: {
@@ -146,4 +138,36 @@ export default {
 
 
 <style scoped>
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 320px;
+  color: white;
+  background-color: rgb(186, 68, 255);
+  font-size: 64px;
+}
+.panel {
+  position: relative;
+  top: -60px;
+  padding: 40px 40px 60px 40px;
+  box-shadow: 0 0 10px 1px rgb(173, 173, 173);
+  background-color: white;
+}
+.button {
+  position: relative;
+  top: -100px;
+}
+.helper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-helper {
+  display: inline-block;
+  padding: 12px 0;
+  color: #f44;
+  font-size: 14px;
+}
 </style>
