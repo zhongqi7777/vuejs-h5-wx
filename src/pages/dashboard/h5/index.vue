@@ -107,9 +107,13 @@ export default {
     tab(index, val) {
       this.currIndex = index;
       //this.$router.push(val);
-
-      this.$router.push({path:val,query:{id:val}});
+      
+      //第一种传参方式
+     // this.$router.push({path:val,query:{id:val}});
       // console.log(index,val);
+
+      //第二种传参方式
+      this.$router.push({name:val,params:{id:val}});
     },
     tabbarSelected(item) {
       const mapType = {
