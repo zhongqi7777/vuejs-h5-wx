@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import getters from "../getters";
-// import dashboard from "../modules/mp/dashboard";
+import dashboard from "../modules/dashboard";
 import permission from "../modules/permission";
 import createLogger from "@/plugins/logger";
 import createPersistedState from "vuex-persistedstate";
@@ -26,8 +26,8 @@ const vuexPersisted = new createPersistedState({
 export default new Vuex.Store({
     getters,
     modules: {
-        permission
-       // dashboard
+        permission,
+       dashboard
     },
     strict: debug,
     plugins: debug ? [createLogger()] : [],
