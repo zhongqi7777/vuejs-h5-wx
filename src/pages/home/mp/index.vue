@@ -1,14 +1,16 @@
 <template>
-  <div class="container">
-    <vPage></vPage>
+  <div>
+    <vHeader></vHeader>
     <vTabBar @onTabsChange="onTabsChange"></vTabBar>
   </div>
 </template>
 
 <script>
-import vPage from "../page/index";
+// import vPage from "../page/index";
 import vTabBar from "@/pages/dashboard/mp/index";
-// import vImageView from "@/components/base/imageView";
+
+import vHeader from '../components/header/mp/index'
+
 const phoneRegExp = /^1(3|4|5|6|7|8|9)\d{9}$/;
 const passwordRegExp = /^\S{5,}$/;
 const codeRegExp = /^\S{4}$/;
@@ -42,7 +44,7 @@ export default {
 
   components: {
     vTabBar,
-    vPage
+    vHeader
   },
 
   methods: {
