@@ -324,6 +324,7 @@
           } else if (route.replace) {
             wx.redirectTo(params);
           } else {
+            console.log('wx.navigateTo(params);',params);
             wx.navigateTo(params);
           }
         }

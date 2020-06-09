@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router-mp'
+// import VueRouter from 'vue-router-mp'
+import VueRouter from '@/utils/vue-router-mp/src/index.js'
 Vue.use(VueRouter);
 
 

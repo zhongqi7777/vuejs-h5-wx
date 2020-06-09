@@ -40,7 +40,8 @@ export default {
 
     // this.$router.push({ path: `/pages/${tab.name}/mp/main`, query: { id:tab.name  } })
 
-      this.$router.push({ name:tab.name, query: { id:tab.name  }})
+      // this.$router.push({ name:tab.name, query: { id:tab.name  }})
+      this.$router.push({ name:tab.name})
 
       //this.$emit("onTabsChange", this.tabbars[this.active1]);
     }
