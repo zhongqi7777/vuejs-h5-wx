@@ -1,6 +1,6 @@
 <template>
- <div>
-   <v-header></v-header>
+ <div class="logo">
+   home
  </div>
 </template>
 
