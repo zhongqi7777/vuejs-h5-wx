@@ -129,3 +129,9 @@ Vue.use(GoodsAction)
 // 遮罩
 import { Overlay } from 'vant'
 Vue.use(Overlay)
+
+
+// 遮罩
+import { Search } from 'vant'
+Vue.use(Search)
+
