@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/home/mp/main",
-    "pages/category/mp/main"
+    "pages/category/mp/main",
+    "pages/cart/mp/main",
+    "pages/eat/mp/main",
+    "pages/mine/mp/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

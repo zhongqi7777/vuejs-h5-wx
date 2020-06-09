@@ -17,6 +17,18 @@ const routes = [{
   name: 'category', // 命名路由
   path: '/pages/category/mp/main',
   isTab: false // 标记当前路由是一个 Tab
+}, {
+  name: 'cart', // 命名路由
+  path: '/pages/cart/mp/main',
+  isTab: false // 标记当前路由是一个 Tab
+}, {
+  name: 'eat', // 命名路由
+  path: '/pages/eat/mp/main',
+  isTab: false // 标记当前路由是一个 Tab
+}, {
+  name: 'mine', // 命名路由
+  path: '/pages/mine/mp/main',
+  isTab: false // 标记当前路由是一个 Tab
 }]
 
 // 2. 创建 router 实例，然后传 `routes` 配置
@@ -26,8 +38,8 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  let result=store.state.dashboard.tabbars.map((value,key,arr)=>{
-      return value.name
+  let result = store.state.dashboard.tabbars.map((value, key, arr) => {
+    return value.name
   }).indexOf(to.name);
 
   store.dispatch("dashboard/setActiveTab", result);
