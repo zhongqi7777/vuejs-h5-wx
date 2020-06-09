@@ -1,11 +1,13 @@
 <template>
-        <van-search
+     <div class="head">
+          <van-search
     v-model="value"
     show-action
     placeholder="请输入搜索关键词"
     @search="onSearch"
     @cancel="onCancel"
   />
+     </div>
 </template>
 <script type="text/javascript">
 
