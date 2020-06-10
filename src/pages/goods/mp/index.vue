@@ -1,7 +1,14 @@
 <template>
   <div class="goods">
     <div>
-      <van-image height="414" width="100%" :src="goods.thumb" />
+      <!-- <van-image height="414" width="100%" :src="goods.thumb" /> -->
+      <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+        <block v-for="(item, index) in goods.thumb" :index="index" :key="index">
+          <swiper-item>
+            <image :src="item" class="slide-image" mode="aspectFill" />
+          </swiper-item>
+        </block>
+      </swiper>
     </div>
     <van-cell-group border="false">
       <van-cell custom-class="goods-message" :title="goods.title" :label="goods.price" />
@@ -41,7 +48,10 @@ export default {
         price: 2680,
         express: "免运费",
         remain: 19,
-        thumb: "/static/images/goods/e5a5a02309a41f9f5def56684808d9ae.jpeg"
+        thumb: [
+          "/static/images/goods/e5a5a02309a41f9f5def56684808d9ae.jpeg",
+          "/static/images/goods/1791ba14088f9c2be8c610d0a6cc0f93.jpeg"
+        ]
       }
     };
   },
