@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <vPage></vPage>
+    <div class="logo">
+      <span @click="cart">category</span>
+    </div>
     <vTabBar @onTabsChange="onTabsChange"></vTabBar>
   </div>
 </template>
@@ -46,20 +48,22 @@ export default {
   },
 
   methods: {
-
     onTabsChange(event) {
-        //this.$router.push({ path: '/pages/home/mp/main' })
-        //this.$router.push(`/pages/${event.name}/mp/main`);
-
-        // this.$router.push({ path: `/pages/${event.name}/mp/main`, query: { id:event.name  } })
+      //this.$router.push({ path: '/pages/home/mp/main' })
+      //this.$router.push(`/pages/${event.name}/mp/main`);
+      // this.$router.push({ path: `/pages/${event.name}/mp/main`, query: { id:event.name  } })
+    },
+    cart(){
+      console.log(' cart(){');
+      this.$router.push({name:"goods"});
     }
   },
-    beforeMount() {
+  beforeMount() {
     console.log("beforeMount category");
   },
   mounted() {
-    console.log("mounted category ",this.$route.query.id);
-  },
+    console.log("mounted category ", this.$route.query.id);
+  }
 };
 </script>
 
