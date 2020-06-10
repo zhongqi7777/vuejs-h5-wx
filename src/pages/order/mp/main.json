@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-tabbar": "/static/vant/tabbar/index",
+    "van-tabbar-item": "/static/vant/tabbar-item/index",
+    "van-checkbox": "/static/vant//checkbox/index",
+    "van-checkbox-group": "/static/vant//checkbox-group/index",
+    "van-submit-bar": "/static/vant//submit-bar/index",
+    "van-card": "/static/vant//card/index"
+  },
+  "navigationBarTitleText": "order"
+}

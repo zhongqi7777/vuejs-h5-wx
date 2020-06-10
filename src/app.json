@@ -5,7 +5,8 @@
     "pages/cart/mp/main",
     "pages/eat/mp/main",
     "pages/mine/mp/main",
-    "pages/goods/mp/main"
+    "pages/goods/mp/main",
+    "pages/order/mp/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
