@@ -131,7 +131,21 @@ import { Overlay } from 'vant'
 Vue.use(Overlay)
 
 
-// 遮罩
+// 搜索
 import { Search } from 'vant'
 Vue.use(Search)
+
+// 轮播
+import { Swipe,SwipeItem } from 'vant'
+Vue.use(Swipe)
+Vue.use(SwipeItem);
+
+// 单元格
+import {col} from "vant";
+Vue.use(col);
+
+
+// card
+import { Card} from "vant";
+Vue.use(Card);
 

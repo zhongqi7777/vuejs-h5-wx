@@ -61,6 +61,7 @@ const router= new Router({
           keepAlive: true
         }
       },
+
       {
         path: 'eat',
         name: 'eat',
@@ -89,7 +90,27 @@ const router= new Router({
         }
       }
     ]
-    }
+    },
+
+    {
+      path: '/goods',
+      name: 'goods',
+      component: () => import('@/pages/goods/h5/index.vue'),
+      // 是否数据缓存
+      meta: {
+        keepAlive: true
+      }
+    },
+
+    {
+      path: '/order',
+      name: 'order',
+      component: () => import('@/pages/order/h5/index.vue'),
+      // 是否数据缓存
+      meta: {
+        keepAlive: true
+      }
+    },
 
 
 
