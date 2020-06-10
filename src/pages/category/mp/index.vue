@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import vPage from "../page/index";
 import vTabBar from "@/pages/dashboard/mp/index";
 // import vImageView from "@/components/base/imageView";
 const phoneRegExp = /^1(3|4|5|6|7|8|9)\d{9}$/;
@@ -43,8 +42,7 @@ export default {
   },
 
   components: {
-    vTabBar,
-    vPage
+    vTabBar
   },
 
   methods: {
