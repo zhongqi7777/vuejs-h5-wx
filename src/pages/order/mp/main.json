@@ -5,7 +5,8 @@
     "van-checkbox": "/static/vant//checkbox/index",
     "van-checkbox-group": "/static/vant//checkbox-group/index",
     "van-submit-bar": "/static/vant//submit-bar/index",
-    "van-card": "/static/vant//card/index"
+    "van-card": "/static/vant//card/index",
+    "van-toast": "/static/vant/toast/index"
   },
   "navigationBarTitleText": "order"
 }

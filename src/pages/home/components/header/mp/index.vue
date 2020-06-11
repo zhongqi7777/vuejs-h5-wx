@@ -6,9 +6,16 @@
       show-action
       @search="onSearch"
       @cancel="onCancel"
+      @change="inputChange"
     />
 
-    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <swiper
+      class="swiper"
+      indicator-dots="true"
+      autoplay="true"
+      interval="5000"
+      duration="1000"
+    >
       <block v-for="(item, index) in movies" :index="index" :key="index">
         <swiper-item>
           <image :src="item" class="slide-image" mode="aspectFill" />
@@ -57,6 +64,19 @@ export default {
       console.log(event);
 
       this.value1 = "";
+    },
+    // add loadsh debounce 函数防抖
+    inputChange(val) {
+      console.log("正在输入...");
+      //防抖time（非立即执行）
+      this.$dt.start({
+        type: "debounce",
+        immediate: false,
+        time: 1000,
+        success: () => {
+          console.log(val.mp.detail);
+        }
+      });
     }
   }
 };

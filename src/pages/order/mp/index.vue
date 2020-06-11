@@ -1,9 +1,13 @@
 <template>
   <div class="order">
-    <van-checkbox-group class="card-goods" :value="checkedGoods" @change="onChange">
+    <van-checkbox-group
+      class="card-goods"
+      :value="checkedGoods"
+      @change="onChange"
+    >
       <van-checkbox
         class="card-goods__item"
-        v-for="(item,index) in goods"
+        v-for="(item, index) in goods"
         :key="index"
         :name="item.id"
       >
@@ -22,10 +26,14 @@
       :button-text="submitBarText"
       @submit="onSubmit"
     />
+
+    <!--这种特殊占位符是必须有的！-->
+    <van-toast id="van-toast" />
   </div>
 </template>
 
 <script>
+import Toast from "../../../../static/vant/toast/toast";
 export default {
   data() {
     return {
@@ -78,10 +86,27 @@ export default {
       );
       this.submitBarText = this.checkedGoods.length ? `结算` : "结算";
     },
+
     onSubmit() {
-      wx.showToast({
-        title: "点击结算",
-        icon: "none"
+      this.$dt.start({
+        time: 3000,
+        success: () => {
+          // wx.showToast({
+          //   title: `结单`
+          // });
+
+          Toast("结单");
+          //Toast.success("成功文案");
+        },
+        fail: () => {
+          // wx.showToast({
+          //   title: `频繁操作`
+          // });
+
+          Toast("频繁操作");
+
+          //Toast.fail("失败提示");
+        }
       });
     }
   },
@@ -98,7 +123,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="less">
 @import "./index.less";
