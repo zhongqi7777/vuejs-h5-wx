@@ -43,6 +43,12 @@ const routes = [
     path: "/pages/order/mp/main",
     isTab: false, // 标记当前路由是一个 Tab
   },
+
+  {
+    name: "/pages/demo/mp/index/main", // 命名路由
+    path: "/pages/demo/mp/index/main",
+    isTab: false, // 标记当前路由是一个 Tab
+  },
 ];
 
 // 2. 创建 router 实例，然后传 `routes` 配置
