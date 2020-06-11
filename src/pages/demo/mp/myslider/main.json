@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-slider": "/static/vant/slider/index"
+  },
+  "navigationBarTitleText": "Slider 滑块"
+}
+
+

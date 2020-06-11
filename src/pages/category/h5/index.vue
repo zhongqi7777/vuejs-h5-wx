@@ -1,8 +1,7 @@
-
 <template>
- <div class="logo">
-   <router-link to="/goods">category</router-link>
- </div>
+  <div class="logo">
+    <router-link to="/goods">category</router-link>
+  </div>
 </template>
 <script>
 import tmp from "../mp/index";

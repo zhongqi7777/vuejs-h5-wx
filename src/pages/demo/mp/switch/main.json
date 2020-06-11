@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-switch": "/static/vant/switch/index"
+  },
+  "navigationBarTitleText": "Switch 开关"
+}
