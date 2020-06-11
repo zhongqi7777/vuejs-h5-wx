@@ -1,76 +1,81 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 /* eslint-disable */
-import Vue from 'vue'
-import Vuex from 'vuex'
-import App from './AppH5'
-import router from './router/h5/index'
-import store from './store/entry/h5'
-import FastClick from 'fastclick'
-import './icons' // icon
+import Vue from "vue";
+import Vuex from "vuex";
+import App from "./AppH5";
+import router from "./router/h5/index";
+import store from "./store/entry/h5";
+import FastClick from "fastclick";
+import "./icons"; // icon
 import VueI18n from "vue-i18n";
 import i18n from "./i18n/index";
 // 多语言
 Vue.use(VueI18n, {
-  i18n: (key, value) => i18n.t(key, value)
+  i18n: (key, value) => i18n.t(key, value),
 });
 
+import dt from "./utils/debounce/index";
+Vue.prototype.$dt = dt;
 
 // 全局引入rem
-import '@/utils/rem'
+import "@/utils/rem";
 
 // 全局引入UI库 vant
-import '@/plugins/vant'
+import "@/plugins/vant";
 
 // 解决移动端点击延迟200ms的问题
-if ('addEventListener' in document) {
-  document.addEventListener('DOMContentLoaded', function () {
+if ("addEventListener" in document) {
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
       FastClick.attach(document.body);
-  }, false);
+    },
+    false
+  );
 }
 
-Vue.config.productionTip = false
-Vue.use(Vuex)
+Vue.config.productionTip = false;
+Vue.use(Vuex);
 Vue.mixin({
   data() {
     return {
-      service: '', // 服务
-      router: '/', // 路由路径
-      imgSrc: '' // 图片路径
-    }
+      service: "", // 服务
+      router: "/", // 路由路径
+      imgSrc: "", // 图片路径
+    };
   },
   methods: {
     newroot() {
-      return this.$route
+      return this.$route;
     },
     navigatePageTo(url) {
-      this.$router.push(url)
+      this.$router.push(url);
     },
     reLaunchPageTo(url) {
-      this.$router.replace(url)
+      this.$router.replace(url);
     },
     setStorageSync(name, data) {
-      sessionStorage.setItem(name, JSON.stringify(data))
+      sessionStorage.setItem(name, JSON.stringify(data));
     },
     getStorageSync(name) {
-      return JSON.parse(sessionStorage.getItem(name))
-    }
+      return JSON.parse(sessionStorage.getItem(name));
+    },
   },
   created() {
     //this.service = httpService
-  }
+  },
 });
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
   components: { App },
-  template: '<App/>',
+  template: "<App/>",
   store,
-  i18n
-})
-
+  i18n,
+});
 
 /**
  * If you don't want to use mock-server
@@ -80,7 +85,7 @@ new Vue({
  * Currently MockJs will be used in the production environment,
  * please remove it before going online ! ! !
  */
-if (process.env.NODE_ENV === 'production') {
-  const { mockXHR } = require('../mock')
-  mockXHR()
+if (process.env.NODE_ENV === "production") {
+  const { mockXHR } = require("../mock");
+  mockXHR();
 }

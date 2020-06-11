@@ -3,28 +3,27 @@ import Vue from "vue";
 import Router from "vue-router";
 Vue.use(Router);
 
-const routerPush = Router.prototype.push
+const routerPush = Router.prototype.push;
 Router.prototype.push = function push(location) {
-  return routerPush.call(this, location).catch(error=> error)
-}
+  return routerPush.call(this, location).catch((error) => error);
+};
 
-const router= new Router({
+const router = new Router({
   // 解决路由跳转页面没有置顶
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     } else {
       return {
         x: 0,
-        y: 0
-      }
+        y: 0,
+      };
     }
   },
   routes: [
-
     {
-      path: '/',
-      redirect: '/dashboard',
+      path: "/",
+      redirect: "/dashboard",
       // 是否数据缓存
       // meta: {
       //     keepAlive: true
@@ -33,112 +32,109 @@ const router= new Router({
     {
       path: "/dashboard",
       name: "dashbord",
-      component: () => import('@/pages/dashboard/h5/index.vue'),
-      children: [{
-        path: '/dashboard',
-        redirect: '/dashboard/home',
-        // 是否数据缓存
+      component: () => import("@/pages/dashboard/h5/index.vue"),
+      children: [
+        {
+          path: "/dashboard",
+          redirect: "/dashboard/home",
+          // 是否数据缓存
 
-        meta: {
-          keepAlive: true
-        }
-      }, {
-        // 主页
-        path: 'home',
-        name: 'home',
-        component: () => import('@/pages/home/h5/index.vue'),
-        // 是否数据缓存
-        meta: {
-          keepAlive: true
-        }
-      },
-      {
-        path: 'category',
-        name: 'category',
-        component: () => import('@/pages/category/h5/index.vue'),
-        // 是否数据缓存
-        meta: {
-          keepAlive: true
-        }
-      },
+          meta: {
+            keepAlive: true,
+          },
+        },
+        {
+          // 主页
+          path: "home",
+          name: "home",
+          component: () => import("@/pages/home/h5/index.vue"),
+          // 是否数据缓存
+          meta: {
+            keepAlive: true,
+          },
+        },
+        {
+          path: "category",
+          name: "category",
+          component: () => import("@/pages/category/h5/index.vue"),
+          // 是否数据缓存
+          meta: {
+            keepAlive: true,
+          },
+        },
 
-      {
-        path: 'eat',
-        name: 'eat',
-        component: () => import('@/pages/eat/h5/index.vue'),
-        // 是否数据缓存
-        meta: {
-          keepAlive: true
-        }
-      },
-      {
-        path: 'cart',
-        name: 'cart',
-        component: () => import('@/pages/cart/h5/index.vue'),
-        // 是否数据缓存
-        meta: {
-          keepAlive: true
-        }
-      },
-      {
-        path: 'mine',
-        name: 'mine',
-        component: () => import('@/pages/mine/h5/index.vue'),
-        // 是否数据缓存
-        meta: {
-          keepAlive: true
-        }
-      }
-    ]
+        {
+          path: "eat",
+          name: "eat",
+          component: () => import("@/pages/eat/h5/index.vue"),
+          // 是否数据缓存
+          meta: {
+            keepAlive: true,
+          },
+        },
+        {
+          path: "cart",
+          name: "cart",
+          component: () => import("@/pages/cart/h5/index.vue"),
+          // 是否数据缓存
+          meta: {
+            keepAlive: true,
+          },
+        },
+        {
+          path: "mine",
+          name: "mine",
+          component: () => import("@/pages/mine/h5/index.vue"),
+          // 是否数据缓存
+          meta: {
+            keepAlive: true,
+          },
+        },
+      ],
     },
 
     {
-      path: '/goods',
-      name: 'goods',
-      component: () => import('@/pages/goods/h5/index.vue'),
+      path: "/goods",
+      name: "goods",
+      component: () => import("@/pages/goods/h5/index.vue"),
       // 是否数据缓存
       meta: {
-        keepAlive: true
-      }
+        keepAlive: true,
+      },
     },
 
     {
-      path: '/order',
-      name: 'order',
-      component: () => import('@/pages/order/h5/index.vue'),
+      path: "/order",
+      name: "order",
+      component: () => import("@/pages/order/h5/index.vue"),
       // 是否数据缓存
       meta: {
-        keepAlive: true
-      }
+        keepAlive: true,
+      },
     },
-
-
-
-
 
     //demo
-    //   {
-    //   path: "/",
-    //   name: "",
-    //   component: () => import('@/pages/demo/h5/index.vue')
-    // }
-  ]
+    {
+      path: "/debounce",
+      name: "debounce",
+      component: () => import("@/pages/demo/debounce/h5/index.vue"),
+    },
+  ],
 });
-
 
 //路由守卫
 router.beforeEach((to, from, next) => {
   if (to.meta.requireAuth) {
-      if (state.userInfo.token) {
-          next()
-      } else {
-          next({
-              path: '/login'
-          })
-      }
+    if (state.userInfo.token) {
+      next();
+    } else {
+      next({
+        path: "/login",
+      });
+    }
   } else {
-      next()
+    next();
   }
-})
+});
 
-export default router
+export default router;
