@@ -102,7 +102,7 @@ export default {
       console.log("上拉加载");
       this.getData().then(res => {
         this.items = this.items.concat(res);
-        if (this.count < 40) {
+        if (this.count < 70) {
           this.$refs.scroll.forceUpdate(true);
         } else {
           this.$refs.scroll.forceUpdate(false);
