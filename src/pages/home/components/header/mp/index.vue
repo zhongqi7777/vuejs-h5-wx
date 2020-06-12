@@ -7,6 +7,7 @@
       @search="onSearch"
       @cancel="onCancel"
       @change="inputChange"
+      class="v-search"
     />
 
     <swiper
@@ -18,7 +19,7 @@
     >
       <block v-for="(item, index) in movies" :index="index" :key="index">
         <swiper-item>
-          <image :src="item" class="slide-image" mode="aspectFill" />
+          <image :src="item" class="imgage" mode="aspectFill" />
         </swiper-item>
       </block>
     </swiper>

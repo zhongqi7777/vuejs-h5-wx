@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="category">
     <div class="logo">
       <span @click="cart">category</span>
     </div>
@@ -51,9 +51,9 @@ export default {
       //this.$router.push(`/pages/${event.name}/mp/main`);
       // this.$router.push({ path: `/pages/${event.name}/mp/main`, query: { id:event.name  } })
     },
-    cart(){
-      console.log(' cart(){');
-      this.$router.push({name:"goods"});
+    cart() {
+      console.log(" cart(){");
+      this.$router.push({ name: "goods" });
     }
   },
   beforeMount() {
@@ -65,7 +65,6 @@ export default {
 };
 </script>
 
-
-<style scoped>
+<style lang="less" scoped>
 @import "./index.less";
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="cart">
     <div class="logo">
       <span @click="cart">cart</span>
     </div>
@@ -42,14 +42,13 @@ export default {
   },
 
   methods: {
-   cart(){
-     this.$router.push({name:"order"});
-   }
+    cart() {
+      this.$router.push({ name: "order" });
+    }
   }
 };
 </script>
 
-
-<style scoped>
+<style lang="less" scoped>
 @import "./index.less";
 </style>

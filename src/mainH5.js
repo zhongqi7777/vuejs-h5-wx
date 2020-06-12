@@ -12,7 +12,7 @@ import VueI18n from "vue-i18n";
 import i18n from "./i18n/index";
 // 多语言
 Vue.use(VueI18n, {
-  i18n: (key, value) => i18n.t(key, value),
+  i18n: (key, value) => i18n.t(key, value)
 });
 
 import dt from "./utils/debounce/index";
@@ -28,7 +28,7 @@ import "@/plugins/vant";
 if ("addEventListener" in document) {
   document.addEventListener(
     "DOMContentLoaded",
-    function () {
+    function() {
       FastClick.attach(document.body);
     },
     false
@@ -42,7 +42,7 @@ Vue.mixin({
     return {
       service: "", // 服务
       router: "/", // 路由路径
-      imgSrc: "", // 图片路径
+      imgSrc: "" // 图片路径
     };
   },
   methods: {
@@ -60,11 +60,11 @@ Vue.mixin({
     },
     getStorageSync(name) {
       return JSON.parse(sessionStorage.getItem(name));
-    },
+    }
   },
   created() {
     //this.service = httpService
-  },
+  }
 });
 
 /* eslint-disable no-new */
@@ -74,7 +74,7 @@ new Vue({
   components: { App },
   template: "<App/>",
   store,
-  i18n,
+  i18n
 });
 
 /**

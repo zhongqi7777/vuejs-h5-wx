@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="home">
     <vHeader></vHeader>
-
+    <div class="v-content"></div>
     <vTabBar @onTabsChange="onTabsChange"></vTabBar>
   </div>
 </template>
@@ -101,6 +101,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 @import "./index.less";
 </style>

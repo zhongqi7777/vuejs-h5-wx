@@ -1,12 +1,11 @@
 <template>
-  <div class="container">
-    <vPage></vPage>
+  <div class="eat">
+    <div class="logo">eat</div>
     <vTabBar></vTabBar>
   </div>
 </template>
 
 <script>
-import vPage from "../page/index";
 import vTabBar from "@/pages/dashboard/mp/index";
 // import vImageView from "@/components/base/imageView";
 const phoneRegExp = /^1(3|4|5|6|7|8|9)\d{9}$/;
@@ -41,8 +40,7 @@ export default {
   },
 
   components: {
-    vTabBar,
-    vPage
+    vTabBar
   },
 
   methods: {
@@ -144,7 +142,6 @@ export default {
 };
 </script>
 
-
-<style scoped>
+<style lang="less" scoped>
 @import "./index.less";
 </style>
