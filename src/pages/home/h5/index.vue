@@ -1,31 +1,26 @@
 <template>
- <div>
-  <vHeader></vHeader>
- </div>
+  <div class="home">
+    <vHeader></vHeader>
+    <div class="v-content"></div>
+  </div>
 </template>
 
 <script>
-
-import vHeader from '../components/header/h5/index'
+import vHeader from "../components/header/h5/index";
 
 export default {
   data() {
-    return {
-    };
+    return {};
   },
 
   components: {
     vHeader
   },
 
-  methods: {
-  }
+  methods: {}
 };
 </script>
 
-
-<style scoped>
-
+<style lang="less" scoped>
 @import "./index.less";
-
 </style>

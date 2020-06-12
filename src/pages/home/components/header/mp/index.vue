@@ -10,7 +10,7 @@
     />
 
     <swiper
-      class="swiper"
+      class="goods-swipe"
       indicator-dots="true"
       autoplay="true"
       interval="5000"

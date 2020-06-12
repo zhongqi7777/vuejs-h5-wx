@@ -7,6 +7,7 @@
       @search="onSearch"
       @cancel="onCancel"
       @input="inputChange"
+      class="v-search"
     />
 
     <van-swipe class="goods-swipe" :autoplay="3000">

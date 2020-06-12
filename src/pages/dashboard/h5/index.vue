@@ -1,13 +1,17 @@
-
 <template>
-  <div>
+  <div class="dasshboard">
     <!-- 缓存界面选择加载 -->
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive" />
     </keep-alive>
     <router-view v-if="!$route.meta.keepAlive" />
 
-    <van-tabbar v-model="active" :safe-area-inset-bottom="true" active-color="#75a342">
+    <van-tabbar
+      v-model="active"
+      :safe-area-inset-bottom="true"
+      active-color="#75a342"
+      class="v-tabbar"
+    >
       <!-- 给购物车的Tabbar加个ID 方便做加入购物车的小球动画 -->
       <van-tabbar-item
         v-for="(item, index) in tabbars"
@@ -16,7 +20,9 @@
         @click="tab(index, item.name)"
         :info="item.name == 'cart' ? goodsNum : ''"
       >
-        <span :class="currIndex == index ? active : ''">{{ $t(item.title)}}</span>
+        <span :class="currIndex == index ? active : ''">{{
+          $t(item.title)
+        }}</span>
         <template slot="icon" slot-scope="props">
           <img :src="props.active ? item.active : item.normal" />
         </template>
@@ -107,13 +113,13 @@ export default {
     tab(index, val) {
       this.currIndex = index;
       //this.$router.push(val);
-      
+
       //第一种传参方式
-     // this.$router.push({path:val,query:{id:val}});
+      // this.$router.push({path:val,query:{id:val}});
       // console.log(index,val);
 
       //第二种传参方式
-      this.$router.push({name:val,params:{id:val}});
+      this.$router.push({ name: val, params: { id: val } });
 
       //this.$store.dispatch("dashboard/setActiveTab", 1);
     },
@@ -131,5 +137,6 @@ export default {
 };
 </script>
 
-<style  lang="less" scoped>
+<style lang="less" scoped>
+@import "./index.less";
 </style>
