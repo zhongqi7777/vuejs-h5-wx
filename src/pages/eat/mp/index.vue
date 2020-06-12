@@ -1,16 +1,19 @@
 <template>
   <div class="eat">
-    <div class="logo">
-      <ul class="list-content">
-        <li class="list-item" v-for="item in items" :key="item">
-          {{ item }}
-        </li>
-      </ul>
-    </div>
+    <ul class="list-content">
+      <li class="list-item" v-for="item in items" :key="item">
+        {{ item }}
+      </li>
+    </ul>
+
     <vTabBar></vTabBar>
 
     <!--这种特殊占位符是必须有的！-->
-    <van-toast id="custom-selector" />
+    <van-toast id="van-toast" />
+
+    <!-- <div class="loading" v-show="isloadmore">
+      <span>loading...</span>
+    </div> -->
   </div>
 </template>
 
@@ -23,7 +26,9 @@ export default {
     return {
       items: [],
       count: 0,
-      toast: ""
+      toast: "",
+      isloadmore: false,
+      isNoMoreData: false
     };
   },
 
@@ -52,16 +57,25 @@ export default {
 
   onReachBottom() {
     console.log("触底了");
+    //return;
+
+    if (this.isNoMoreData) {
+      Toast("没有更多数据啦");
+      return;
+    }
 
     Toast.loading({
-      duration: 3000, // 持续展示 toast
-      forbidClick: true, // 禁用背景点击
-      message: "loading...",
-      loadingType: "spinner",
-      selector: "#custom-selector",
+      mask: false,
+      message: "加载中...",
+      duration: 3000,
       onClose: () => {
         this.getData().then(res => {
           this.items = this.items.concat(res);
+
+          if (this.count < 40) {
+          } else {
+            this.isNoMoreData = true;
+          }
         });
       }
     });
