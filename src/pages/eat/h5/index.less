@@ -1,36 +1,34 @@
 .eat {
   height: calc(100% - 50px);
 
-  .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 320px;
-    color: white;
-    background-color: #f44;
-    font-size: 64px;
-  }
-  .panel {
-    position: relative;
-    top: -60px;
-    padding: 40px 40px 60px 40px;
-    box-shadow: 0 0 10px 1px rgb(173, 173, 173);
-    background-color: white;
-  }
-  .button {
-    position: relative;
-    top: -100px;
-  }
-  .helper {
-    display: flex;
-    justify-content: space-between;
+  .position-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50px;
   }
 
-  .text-helper {
-    display: inline-block;
-    padding: 12px 0;
-    color: #f44;
-    font-size: 14px;
+  .list-content {
+    list-style: none;
+    background: #fff;
+  }
+
+  .list-item {
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    padding-left: 20px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .go-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #009a61;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 15px;
   }
 }

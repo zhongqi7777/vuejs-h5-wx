@@ -19,7 +19,7 @@ import dt from "./utils/debounce/index";
 Vue.prototype.$dt = dt;
 
 // 全局引入rem
-import "@/utils/rem";
+// import "@/utils/rem";
 
 // 全局引入UI库 vant
 import "@/plugins/vant";
