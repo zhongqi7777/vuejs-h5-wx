@@ -55,11 +55,7 @@ export default {
   components: {
     VueBetterScroll
   },
-  mounted() {
-    //this.items = [];
-    // this.scrollTo();
-    // this.onPullingDown();
-  },
+  mounted() {},
 
   activated() {
     this.scrollTo();

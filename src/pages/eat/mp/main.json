@@ -1,7 +1,11 @@
 {
   "usingComponents": {
     "van-tabbar": "/static/vant/tabbar/index",
-    "van-tabbar-item": "/static/vant/tabbar-item/index"
+    "van-tabbar-item": "/static/vant/tabbar-item/index",
+    "van-toast": "/static/vant/toast/index"
   },
-  "navigationBarTitleText": "eat"
+  "navigationBarTitleText": "eat",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 50
 }
