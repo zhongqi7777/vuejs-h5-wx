@@ -4,6 +4,10 @@ import App from "./App";
 // import MpvueRouterPatch from 'mpvue-router-patch'
 // Vue.use(MpvueRouterPatch)
 
+import fly from '@/api/index';
+Vue.prototype.$http = fly;
+
+
 import "./router/mp/index";
 
 import Vuex from "vuex";

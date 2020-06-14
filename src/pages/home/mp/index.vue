@@ -56,7 +56,14 @@ export default {
       // this.$router.push(`/pages/${event.name}/mp/main`);
     },
     fetch() {
-      getMenu();
+      var params = {
+        // page: 1,
+        // pageSize: 15,
+      };
+
+      this.$http.policy(params).then(function(res) {
+        console.log("res", res);
+      });
     },
   },
   // beforeCreate() {

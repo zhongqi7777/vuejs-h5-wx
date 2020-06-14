@@ -24,7 +24,16 @@ export default {
 
   methods: {
     fetch() {
-      getMenu();
+      //getMenu();
+
+      var params = {
+        // page: 1,
+        // pageSize: 15,
+      };
+      this.$http.policy(params).then(function(res) {
+        console.log("success");
+        console.log(res);
+      });
     },
   },
 };

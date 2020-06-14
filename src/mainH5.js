@@ -10,6 +10,11 @@ import FastClick from "fastclick";
 import "./icons"; // icon
 import VueI18n from "vue-i18n";
 import i18n from "./i18n/index";
+
+import fly from '@/api/index';
+Vue.prototype.$http = fly;
+
+
 // 多语言
 Vue.use(VueI18n, {
   i18n: (key, value) => i18n.t(key, value)
@@ -28,7 +33,7 @@ import "@/plugins/vant";
 if ("addEventListener" in document) {
   document.addEventListener(
     "DOMContentLoaded",
-    function() {
+    function () {
       FastClick.attach(document.body);
     },
     false
