@@ -1,16 +1,18 @@
 <template>
   <div class="home">
     <vHeader></vHeader>
-    <div class="v-content"></div>
+    <div class="v-content">
+      <van-button type="info" @click="fetch">请求数据</van-button>
+    </div>
     <vTabBar @onTabsChange="onTabsChange"></vTabBar>
   </div>
 </template>
 
 <script>
-// import vPage from "../page/index";
 import vTabBar from "@/pages/dashboard/mp/index";
 
 import vHeader from "../components/header/mp/index";
+import { getMenu } from "@/api/index";
 
 const phoneRegExp = /^1(3|4|5|6|7|8|9)\d{9}$/;
 const passwordRegExp = /^\S{5,}$/;
@@ -34,25 +36,28 @@ export default {
       // form data
       normal: {
         phone: "",
-        password: ""
+        password: "",
       },
       message: {
         phone: "",
-        code: ""
-      }
+        code: "",
+      },
     };
   },
 
   components: {
     vTabBar,
-    vHeader
+    vHeader,
   },
 
   methods: {
     onTabsChange(event) {
       // console.log(' onTabsChange(event) {',event);
       // this.$router.push(`/pages/${event.name}/mp/main`);
-    }
+    },
+    fetch() {
+      getMenu();
+    },
   },
   // beforeCreate() {
   //   console.log("beforeCreate home");
@@ -65,7 +70,7 @@ export default {
   },
   mounted() {
     console.log("mounted home", this.$route.query.id);
-  }
+  },
   // beforeUpdate() {
   //   console.log("beforeUpdate home");
   // },

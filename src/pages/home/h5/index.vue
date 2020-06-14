@@ -1,12 +1,17 @@
 <template>
   <div class="home">
     <vHeader></vHeader>
-    <div class="v-content"></div>
+    <div class="v-content">
+    <van-button type="info" @click="fetch">请求数据</van-button>
+
+    
+    </div>
   </div>
 </template>
 
 <script>
 import vHeader from "../components/header/h5/index";
+import { getMenu } from "@/api/index";
 
 export default {
   data() {
@@ -14,10 +19,14 @@ export default {
   },
 
   components: {
-    vHeader
+    vHeader,
   },
 
-  methods: {}
+  methods: {
+    fetch() {
+      getMenu();
+    },
+  },
 };
 </script>
 
