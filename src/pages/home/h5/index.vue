@@ -20,14 +20,9 @@ export default {
 
   methods: {
     fetch() {
-      this.$http
-        .getMenu({
-          type: "get"
-        })
-        .then(function(res) {
-          console.log("success");
-          console.log(res);
-        });
+      this.$http.getMenu({ type: "get" }).then(function(res) {
+        console.log("res", res);
+      });
     }
   }
 };

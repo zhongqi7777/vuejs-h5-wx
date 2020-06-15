@@ -36,18 +36,18 @@ export default {
       // form data
       normal: {
         phone: "",
-        password: "",
+        password: ""
       },
       message: {
         phone: "",
-        code: "",
-      },
+        code: ""
+      }
     };
   },
 
   components: {
     vTabBar,
-    vHeader,
+    vHeader
   },
 
   methods: {
@@ -56,15 +56,10 @@ export default {
       // this.$router.push(`/pages/${event.name}/mp/main`);
     },
     fetch() {
-      var params = {
-        // page: 1,
-        // pageSize: 15,
-      };
-
-      this.$http.policy(params).then(function(res) {
+      this.$http.getMenu({ type: "get" }).then(function(res) {
         console.log("res", res);
       });
-    },
+    }
   },
   // beforeCreate() {
   //   console.log("beforeCreate home");
@@ -77,7 +72,7 @@ export default {
   },
   mounted() {
     console.log("mounted home", this.$route.query.id);
-  },
+  }
   // beforeUpdate() {
   //   console.log("beforeUpdate home");
   // },
