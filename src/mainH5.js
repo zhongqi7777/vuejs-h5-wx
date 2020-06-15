@@ -22,8 +22,8 @@ Vue.use(VueI18n, {
 import dt from "./utils/debounce/index";
 Vue.prototype.$dt = dt;
 
-// 全局引入rem
-// import "@/utils/rem";
+//全局引入rem
+import "@/utils/rem";
 
 // 全局引入UI库 vant
 import "@/plugins/vant";
@@ -32,7 +32,7 @@ import "@/plugins/vant";
 if ("addEventListener" in document) {
   document.addEventListener(
     "DOMContentLoaded",
-    function() {
+    function () {
       FastClick.attach(document.body);
     },
     false

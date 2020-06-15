@@ -5,6 +5,8 @@
             var clientWidth = docEl.clientWidth;
             if (!clientWidth) return;
             // docEl.style.fontSize = 15 * (clientWidth / 320) + 'px';
+
+            console.log("rem");
             docEl.style.fontSize = 100 * (clientWidth / 320) + 'px';// 320 代表设计稿尺寸
         };
     if (!doc.addEventListener) return;

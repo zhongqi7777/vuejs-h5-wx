@@ -1,4 +1,4 @@
-import BScroll from './BScroll.vue'
+import BScroll from './BScroll.vue'   //https://github.com/huangjincq/vue-better-scroll
 
 /* istanbul ignore next */
 BScroll.install = function (Vue) {

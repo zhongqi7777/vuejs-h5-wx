@@ -25,11 +25,11 @@ export default {
   },
   computed: {
     ...mapState(["permission"]),
-    ...mapGetters(["permission_routes"])
+    ...mapGetters(["permission_routes"]),
   },
 
   components: {
-    vHeader
+    vHeader,
   },
 
   methods: {
@@ -40,8 +40,8 @@ export default {
     },
     testAction() {
       this.$store.dispatch("permission/getMenuData", "hi,vuex!");
-    }
-  }
+    },
+  },
 };
 </script>
 
