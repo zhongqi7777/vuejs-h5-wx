@@ -28,6 +28,7 @@
   "dependencies": {
     "amfe-flexible": "^2.2.1",
     "async-throttle-cache": "^1.1.2",
+    "autoprefixer": "^9.8.0",
     "axios": "^0.19.2",
     "axios-miniprogram-adapter": "^0.3.0",
     "better-scroll": "^1.15.2",
@@ -40,6 +41,7 @@
     "mpvue-router-patch": "^2.0.0",
     "node-notifier": "^5.2.1",
     "object-equal": "^1.0.0",
+    "postcss": "^7.0.32",
     "postcss-px-to-viewport": "^1.1.1",
     "serve-static": "^1.14.1",
     "stylus": "^0.54.7",
