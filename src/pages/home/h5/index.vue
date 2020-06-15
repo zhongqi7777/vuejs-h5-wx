@@ -2,7 +2,11 @@
   <div class="home">
     <vHeader></vHeader>
     <div class="v-content">
-      <van-button type="info" @click="fetch">请求数据</van-button>
+      <van-button type="info" @click="fetch" class="btn-fetch"
+        >请求数据</van-button
+      >
+
+      <van-button type="info" class="btn-fetch">vuex</van-button>
     </div>
   </div>
 </template>

@@ -2,7 +2,21 @@
   <div class="home">
     <vHeader></vHeader>
     <div class="v-content">
-      <van-button type="info" @click="fetch">请求数据</van-button>
+      <van-button
+        type="info"
+        @click="fetch"
+        custom-class="btn-fetch"
+        block="true"
+        >请求数据</van-button
+      >
+
+      <van-button
+        type="info"
+        custom-class="btn-fetch"
+        block="true"
+        custom-style="margin: 10px 0 0 0; width:100%"
+        >vuex</van-button
+      >
     </div>
     <vTabBar @onTabsChange="onTabsChange"></vTabBar>
   </div>
