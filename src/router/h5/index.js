@@ -3,9 +3,11 @@ import Vue from "vue";
 import Router from "vue-router";
 Vue.use(Router);
 
+import dashbordRouter from "./modules/dashboard";
+
 const routerPush = Router.prototype.push;
 Router.prototype.push = function push(location) {
-  return routerPush.call(this, location).catch((error) => error);
+  return routerPush.call(this, location).catch(error => error);
 };
 
 const router = new Router({
@@ -16,82 +18,20 @@ const router = new Router({
     } else {
       return {
         x: 0,
-        y: 0,
+        y: 0
       };
     }
   },
   routes: [
     {
       path: "/",
-      redirect: "/dashboard",
+      redirect: "/dashboard"
       // 是否数据缓存
       // meta: {
       //     keepAlive: true
       // },
     },
-    {
-      path: "/dashboard",
-      name: "dashbord",
-      component: () => import("@/pages/dashboard/h5/index.vue"),
-      children: [
-        {
-          path: "/dashboard",
-          redirect: "/dashboard/home",
-          // 是否数据缓存
-
-          meta: {
-            keepAlive: true,
-          },
-        },
-        {
-          // 主页
-          path: "home",
-          name: "home",
-          component: () => import("@/pages/home/h5/index.vue"),
-          // 是否数据缓存
-          meta: {
-            keepAlive: true,
-          },
-        },
-        {
-          path: "category",
-          name: "category",
-          component: () => import("@/pages/category/h5/index.vue"),
-          // 是否数据缓存
-          meta: {
-            keepAlive: true,
-          },
-        },
-
-        {
-          path: "eat",
-          name: "eat",
-          component: () => import("@/pages/eat/h5/index.vue"),
-          // 是否数据缓存
-          meta: {
-            keepAlive: true,
-          },
-        },
-        {
-          path: "cart",
-          name: "cart",
-          component: () => import("@/pages/cart/h5/index.vue"),
-          // 是否数据缓存
-          meta: {
-            keepAlive: true,
-          },
-        },
-        {
-          path: "mine",
-          name: "mine",
-          component: () => import("@/pages/mine/h5/index.vue"),
-          // 是否数据缓存
-          meta: {
-            keepAlive: true,
-          },
-        },
-      ],
-    },
+    dashbordRouter,
 
     {
       path: "/goods",
@@ -99,8 +39,8 @@ const router = new Router({
       component: () => import("@/pages/goods/h5/index.vue"),
       // 是否数据缓存
       meta: {
-        keepAlive: true,
-      },
+        keepAlive: true
+      }
     },
 
     {
@@ -109,17 +49,17 @@ const router = new Router({
       component: () => import("@/pages/order/h5/index.vue"),
       // 是否数据缓存
       meta: {
-        keepAlive: true,
-      },
+        keepAlive: true
+      }
     },
 
     //demo
     {
       path: "/debounce",
       name: "debounce",
-      component: () => import("@/pages/demo/debounce/h5/index.vue"),
-    },
-  ],
+      component: () => import("@/pages/demo/debounce/h5/index.vue")
+    }
+  ]
 });
 
 //路由守卫
@@ -129,7 +69,7 @@ router.beforeEach((to, from, next) => {
       next();
     } else {
       next({
-        path: "/login",
+        path: "/login"
       });
     }
   } else {
