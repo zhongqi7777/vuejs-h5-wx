@@ -1,10 +1,5 @@
-import request from "@/utils/flyio/lib/request";
+import * as home from "./modules/home";
 const api = {
-  getMenu: params => {
-    return request({
-      ...params,
-      url: "/vuejs-h5-wx/routes"
-    });
-  }
+  ...home
 };
 export default api;
