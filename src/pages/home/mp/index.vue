@@ -15,14 +15,20 @@
         custom-class="btn-fetch"
         block="true"
         custom-style="margin: 10px 0 0 0; width:100%"
-        >vuex</van-button
+        @click="testAction"
+        >vuex action</van-button
       >
+
+      <div>state: {{ permission.routes }}</div>
+      <div>getter:{{ permission_routes }}</div>
     </div>
+
     <vTabBar @onTabsChange="onTabsChange"></vTabBar>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions, mapState } from "vuex";
 import vTabBar from "@/pages/dashboard/mp/index";
 
 import vHeader from "../components/header/mp/index";
@@ -59,6 +65,11 @@ export default {
     };
   },
 
+  computed: {
+    ...mapState(["permission"]),
+    ...mapGetters(["permission_routes"])
+  },
+
   components: {
     vTabBar,
     vHeader
@@ -73,6 +84,9 @@ export default {
       this.$http.getMenu({ type: "get" }).then(function(res) {
         console.log("res", res);
       });
+    },
+    testAction() {
+      this.$store.dispatch("permission/getMenuData", "hi,vuex!");
     }
   },
   // beforeCreate() {
