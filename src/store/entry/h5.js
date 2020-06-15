@@ -27,6 +27,5 @@ export default new Vuex.Store({
     dashboard
   },
   strict: debug,
-  plugins: debug ? [createLogger()] : [],
   plugins: debug ? [createLogger(), vuexPersisted] : [vuexPersisted]
 });

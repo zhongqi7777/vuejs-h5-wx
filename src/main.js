@@ -4,14 +4,13 @@ import App from "./App";
 // import MpvueRouterPatch from 'mpvue-router-patch'
 // Vue.use(MpvueRouterPatch)
 
-import fly from '@/api/index';
+import fly from "@/api/index";
 Vue.prototype.$http = fly;
-
 
 import "./router/mp/index";
 
 import Vuex from "vuex";
-import store from "./store/entry/wx";
+import store from "./store/index";
 Vue.use(Vuex);
 
 Vue.prototype.$store = store;

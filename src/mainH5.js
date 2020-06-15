@@ -5,15 +5,14 @@ import Vue from "vue";
 import Vuex from "vuex";
 import App from "./AppH5";
 import router from "./router/h5/index";
-import store from "./store/entry/h5";
+import store from "./store/index";
 import FastClick from "fastclick";
 import "./icons"; // icon
 import VueI18n from "vue-i18n";
 import i18n from "./i18n/index";
 
-import fly from '@/api/index';
+import fly from "@/api/index";
 Vue.prototype.$http = fly;
-
 
 // 多语言
 Vue.use(VueI18n, {
@@ -33,7 +32,7 @@ import "@/plugins/vant";
 if ("addEventListener" in document) {
   document.addEventListener(
     "DOMContentLoaded",
-    function () {
+    function() {
       FastClick.attach(document.body);
     },
     false
