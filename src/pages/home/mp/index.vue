@@ -81,7 +81,7 @@ export default {
       // this.$router.push(`/pages/${event.name}/mp/main`);
     },
     fetch() {
-      this.$http.getMenu({ type: "get" }).then(function(res) {
+      this.$http.getMenu({ type: "get"}).then(function(res) {
         console.log("res", res);
       });
     },

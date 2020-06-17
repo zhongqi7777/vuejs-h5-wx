@@ -1,5 +1,5 @@
 var Mock = require("../../mokjs/WxMock.js");
-Mock.mock("http://localhost:8081/mock/vuejs-h5-wx/routes", {
+Mock.mock("http://www.testmock.com/mock/vuejs-h5-wx/routes", {
   code: 200,
   "data|1-20": [
     {

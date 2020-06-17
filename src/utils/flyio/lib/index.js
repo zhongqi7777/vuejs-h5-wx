@@ -36,6 +36,7 @@ request.interceptors.response.use(
     return promise.resolve(response.data);
   },
   (err, promise) => {
+    console.log('(err, promise) => {',err);
     if (platform == "h5") {
     } else {
       //wx.hideNavigationBarLoading()
