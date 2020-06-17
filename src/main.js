@@ -1,7 +1,6 @@
 import Vue from "vue";
 import App from "./App";
 
-import "./../mock/mp/data/index"
 
 // import MpvueRouterPatch from 'mpvue-router-patch'
 // Vue.use(MpvueRouterPatch)
@@ -39,4 +38,7 @@ app.$mount();
 //   const { mockXHR } = require("../mock");
 //   mockXHR();
 // }
+
+
+import "./../mock/mp/data/index"
 
