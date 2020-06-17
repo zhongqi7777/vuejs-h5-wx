@@ -32,7 +32,7 @@ import "@/plugins/vant";
 if ("addEventListener" in document) {
   document.addEventListener(
     "DOMContentLoaded",
-    function () {
+    function() {
       FastClick.attach(document.body);
     },
     false
@@ -90,6 +90,6 @@ new Vue({
  * please remove it before going online ! ! !
  */
 if (process.env.NODE_ENV === "production") {
-  const { mockXHR } = require("../mock");
+  const { mockXHR } = require("../mock/h5");
   mockXHR();
 }

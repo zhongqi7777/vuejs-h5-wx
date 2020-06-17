@@ -4,6 +4,8 @@ let baseURL = process.env.BASE_URL ? process.env.BASE_URL : "/";
 let baseENV = process.env.BASE_ENV;
 baseURL += baseENV;
 
+console.log("baseURL", baseURL);
+
 const getRequest = val => {
   switch (val.type) {
     case "get":
