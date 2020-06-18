@@ -37,7 +37,8 @@ module.exports = merge(baseWebpackConfig, {
   },
   // these devServer options should be customized in /config/index.js
   devServer: {
-    before: require('../mock/mock-server.js')
+    //before: require('../mock/mock-server.js')
+    // proxy: config.dev.proxyTable
   },
   plugins: [
     new webpack.DefinePlugin({

@@ -62,7 +62,7 @@ module.exports = {
     //依据参数 baseenv 确定代理环境
     proxyTable: {
       "/mock/": {
-        target: `http://${HOST ? HOST : "localhost"}:8080`,
+        target: `http://${HOST ? HOST : "localhost"}:3080`,
         changeOrigin: false,
         pathRewrite: {
           "^/mock": ""

@@ -3,6 +3,8 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
+const HOST = process.env.npm_config_host;
+const PORT = process.env.npm_config_port && Number(process.env.npm_config_port);
 
 module.exports = {
   dev: {
@@ -10,7 +12,22 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      "/mock/": {
+        target: `http://${HOST ? HOST : "localhost"}:3000`,
+        changeOrigin: false,
+        pathRewrite: {
+          "^/mock": ""
+        }
+      },
+      "/api/": {
+        target: `http://${HOST ? HOST : "localhost"}:8080`,
+        changeOrigin: false,
+        pathRewrite: {
+          "^/api": ""
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
