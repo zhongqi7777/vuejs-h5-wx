@@ -29,7 +29,7 @@ let baseurl = "/mock";
 let allApis = [...articleAPI];
 
 allApis.forEach(item => {
-  app.get(`${baseurl}${item.url}`, function(req, res) {
+  app[item.type](`${baseurl}${item.url}`, function(req, res) {
     res.json(Mock.mock(item.fn(req)));
   });
 });
