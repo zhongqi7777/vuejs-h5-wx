@@ -1,39 +1,47 @@
 //引入express
-let express = require('express')
+let express = require("express");
 //引入mock
-let Mock = require('mockjs')
+let Mock = require("mockjs");
 //实例化express
 let app = express();
 
 // post请求体相关
-let bodyParser = require('body-parser')
+let bodyParser = require("body-parser");
 // mock数据API
-let articleAPI = require('./article')
-let loginAPI = require('././login')
+let articleAPI = require("./article");
+//let loginAPI = require('././login')
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // 允许跨域
-app.all('*', function (req, res, next) {
+app.all("*", function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-  // 此处根据前端请求携带的请求头进行配置 
+  res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
+  // 此处根据前端请求携带的请求头进行配置
   res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
   // 例如： 我们公司的请求头需要携带Authorization和Client-Type，此处就应该按照以下进行配置
   // res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Authorization, Client-Type");
   next();
-})
+});
 
-let baseurl="/mock";
+let baseurl = "/mock";
+
+let allApis = [...articleAPI];
+
+allApis.forEach(item => {
+  app.get(`${baseurl}${item.url}`, function(req, res) {
+    res.json(Mock.mock(item.fn(req)));
+  });
+});
 
 // table列表接口
 // app.get('/mock/article/list', function (req, res) {
 //   res.json(Mock.mock(articleAPI.getList(req)))
 // })
 
-app.get(`${baseurl}/article/list`, function (req, res) {
-  res.json(Mock.mock(articleAPI.getList(req)))
-})
+// app.get(`${baseurl}/article/list`, function(req, res) {
+//   res.json(Mock.mock(articleAPI.getList(req)));
+// });
 
 // // 登入
 // app.post('/login/login', function (req, res) {
@@ -50,6 +58,6 @@ app.get(`${baseurl}/article/list`, function (req, res) {
 //   res.json(Mock.mock(loginAPI.getUserInfo(req)))
 // })
 
-app.listen('3000', () => {
-  console.log('监听端口 3000')
-})
+app.listen("3000", () => {
+  console.log("监听端口 3000");
+});
