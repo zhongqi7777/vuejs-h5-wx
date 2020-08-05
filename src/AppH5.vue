@@ -2,10 +2,10 @@
   <div id="app">
     <router-view></router-view>
     <van-icon name="share" class="share" size="35px" @click="share" />
-    <van-popup v-model="show" >
-    <div class="content">
-      <h3>h5</h3>
-    </div>
+    <van-popup v-model="show">
+      <div class="content">
+        <h3>h5</h3>
+      </div>
     </van-popup>
   </div>
 </template>
@@ -27,10 +27,10 @@ window.onload = function() {
 
 export default {
   name: "App",
-  data(){
-    return{
-      show:false
-    }
+  data() {
+    return {
+      show: false
+    };
   },
   created() {
     // 调用API从本地缓存中获取数据
@@ -43,8 +43,8 @@ export default {
     // console.log("mpvuePlatform", process.env.mpvuePlatform);
   },
   methods: {
-    share(){
-      this.show=true
+    share() {
+      this.show = true;
     }
   }
 };
@@ -57,13 +57,13 @@ body {
     width: 100%;
     height: 100%;
 
-    .share{
+    .share {
       position: fixed;
       bottom: 150px;
       right: 10px;
     }
 
-    .content{
+    .content {
       width: 300px;
       height: 70px;
       text-align: center;
