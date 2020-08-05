@@ -3,7 +3,9 @@
     "van-tabbar": "/static/vant/tabbar/index",
     "van-tabbar-item": "/static/vant/tabbar-item/index",
     "van-search": "/static/vant/search/index",
-    "van-button": "/static/vant/button/index"
+    "van-button": "/static/vant/button/index",
+    "van-popup": "/static/vant/popup/index",
+    "van-icon": "/static/vant/icon/index"
   },
   "navigationBarTitleText": "home test"
 }

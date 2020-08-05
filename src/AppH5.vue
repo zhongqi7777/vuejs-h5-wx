@@ -4,7 +4,7 @@
     <van-icon name="share" class="share" size="35px" @click="share" />
     <van-popup v-model="show">
       <div class="content">
-        <h3>h5</h3>
+        h5
       </div>
     </van-popup>
   </div>
@@ -64,6 +64,7 @@ body {
     }
 
     .content {
+      font-size: 15px;
       width: 300px;
       height: 70px;
       text-align: center;

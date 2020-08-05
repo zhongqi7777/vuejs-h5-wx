@@ -24,6 +24,12 @@
     </div>
 
     <vTabBar @onTabsChange="onTabsChange"></vTabBar>
+
+    <van-icon name="share" class="share" size="35px" @click="share" />
+
+    <van-popup :show="show"  @close="onClose">
+      <div class="popup-content">小程序</div>
+    </van-popup>
   </div>
 </template>
 
@@ -61,7 +67,8 @@ export default {
       message: {
         phone: "",
         code: ""
-      }
+      },
+      show: false
     };
   },
 
@@ -81,13 +88,20 @@ export default {
       // this.$router.push(`/pages/${event.name}/mp/main`);
     },
     fetch() {
-      this.$http.getMenu({ type: "get"}).then(function(res) {
+      this.$http.getMenu({ type: "get" }).then(function(res) {
         console.log("res", res);
       });
     },
     testAction() {
       this.$store.dispatch("permission/getMenuData", "hi,vuex!");
-    }
+    },
+    share() {
+      console.log(" share() {");
+      this.show = true;
+    },
+    onClose() {
+      this.show = false;
+    },
   },
   // beforeCreate() {
   //   console.log("beforeCreate home");
