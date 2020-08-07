@@ -12,6 +12,7 @@
 
 <script>
 /* eslint-disable */
+import Mshare from "@/utils/m-share/m-share-es6";
 
 // 禁止手机端扩大和缩小手势
 window.onload = function() {
@@ -44,7 +45,17 @@ export default {
   },
   methods: {
     share() {
-      this.show = true;
+      // this.show = true;
+
+      Mshare.to("wx", {
+        title: "m-share", // 标题，默认读取document.title
+        desc: "m-share的描述", // 描述, 默认读取head标签：<meta name="description" content="desc" />
+        link: "http://www.dearhaoge.com/project/m-share/", // 网址，默认使用window.location.href
+        imgUrl: "http://www.dearhaoge.com/project/m-share/shareIcon.jpg", // 图片, 默认取网页中第一个img标签
+        fnDoShare: function(type) {
+          console.log(1);
+        }
+      });
     }
   }
 };

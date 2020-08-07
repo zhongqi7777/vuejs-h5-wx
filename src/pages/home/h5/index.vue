@@ -19,6 +19,7 @@
 <script>
 import { mapGetters, mapActions, mapState } from "vuex";
 import vHeader from "../components/header/h5/index";
+
 export default {
   data() {
     return {};
@@ -42,6 +43,8 @@ export default {
       this.$store.dispatch("permission/getMenuData", "hi,vuex!");
     },
   },
+  mounted(){
+  }
 };
 </script>
 
